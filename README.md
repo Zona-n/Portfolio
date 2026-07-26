@@ -14,7 +14,8 @@ it works.
 index.html                     all the page content lives here
 css/styles.css                 all the styling
 js/main.js                     all the interactivity
-assets/bitmoji.svg             ← PLACEHOLDER avatar. Swap this for your photo.
+assets/profile.jpg             ← your headshot, shown in the hero
+assets/bitmoji.svg             illustrated fallback if profile.jpg is missing
 assets/favicon.svg             the little icon in the browser tab
 assets/Zona-Noman-Resume.pdf   the résumé people download
 ```
@@ -23,25 +24,23 @@ assets/Zona-Noman-Resume.pdf   the résumé people download
 
 ## The three things you'll probably want to change
 
-### 1. Replace the placeholder avatar with your real photo
+### 1. Use a different headshot
 
-The face on the homepage is a stand-in illustration. To use a real photo:
+The hero photo is `assets/profile.jpg`. To swap it, just replace that file — same name,
+same folder. No code changes needed.
 
-1. Save your photo into the `assets` folder as `profile.jpg`
-   (a portrait-shaped photo works best — taller than it is wide).
-2. Open `index.html`, find this line (near the top, in the hero section):
+Easiest way, no terminal required:
 
-   ```html
-   <img src="assets/bitmoji.svg" alt="Illustrated avatar of Zona Noman" class="portrait-card__img" id="avatarImg" />
-   ```
+1. Go to https://github.com/Zona-n/Portfolio/tree/main/assets
+2. Click **Add file → Upload files**
+3. Drag in your photo, renamed to exactly `profile.jpg`
+4. Click **Commit changes** — the site updates in about a minute
 
-3. Change `assets/bitmoji.svg` to `assets/profile.jpg` and update the alt text:
+A portrait-shaped photo (taller than wide) works best. The hero crops it into an arch and
+frames it around the top ~84% of the image, so leave a little room above your head.
 
-   ```html
-   <img src="assets/profile.jpg" alt="Zona Noman" class="portrait-card__img" id="avatarImg" />
-   ```
-
-That's it — the frame, the animated scan line, and the layout all keep working.
+If `profile.jpg` is ever missing or fails to load, the page quietly falls back to the
+illustrated avatar instead of showing a broken image.
 
 ### 2. Update the résumé
 

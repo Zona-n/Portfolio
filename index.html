@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Zona Noman — Data Scientist &amp; ML Engineer</title>
-<meta name="description" content="Zona Noman is a data science student at UIC building machine learning systems, analytics pipelines, and AI products that make messy data useful for real people." />
+<meta name="description" content="Zona Noman is a senior studying data science at UIC, building machine learning systems, analytics pipelines, and AI products that make messy data useful for real people." />
 <meta name="author" content="Zona Noman" />
 <meta name="theme-color" content="#0A0A0C" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Zona Noman — Data Scientist &amp; ML Engineer" />
-<meta property="og:description" content="ML systems, analytics pipelines, and AI products. NASA Space Apps award winner. Data Science @ UIC." />
+<meta property="og:description" content="ML systems, analytics pipelines, and AI products. NASA Space Apps award winner. Senior, B.S. Data Science @ UIC." />
 <meta property="og:url" content="https://zona-n.github.io/Portfolio/" />
 <meta name="twitter:card" content="summary_large_image" />
 
@@ -53,7 +53,7 @@
         <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
-      <a class="btn btn--primary btn--sm" href="#contact">Let's talk</a>
+      <a class="btn btn--primary btn--sm" href="#contact">Ping me</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
@@ -67,44 +67,32 @@
   <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
   <div class="hero__glow" aria-hidden="true"></div>
 
-  <div class="wrap hero__grid">
+  <div class="wrap">
 
-    <div class="hero__portrait reveal">
-      <div class="portrait-card" id="portraitCard">
-        <div class="portrait-card__frame">
-          <!-- ===== BITMOJI PLACEHOLDER =====
-               Swap this <img> src for your own photo (assets/profile.jpg)
-               and the layout keeps working. -->
-          <img src="assets/bitmoji.svg" alt="Illustrated avatar of Zona Noman" class="portrait-card__img" id="avatarImg" />
-          <div class="portrait-card__scan" aria-hidden="true"></div>
-        </div>
-        <div class="portrait-card__badge">
-          <span class="dot-live" aria-hidden="true"></span>
-          Open to Summer 2027 internships
-        </div>
-      </div>
-      <div class="hello-chip">
-        <span class="hello-chip__label">HELLO WORLD!</span>
-        <strong>I'm Zona :)</strong>
-        <span class="hello-chip__sub">Turning messy data into decisions</span>
-      </div>
+    <div class="hero__meta reveal">
+      <span class="hero__status"><span class="dot-live" aria-hidden="true"></span>Senior, graduating May 2027</span>
+      <span class="hero__sep" aria-hidden="true">/</span>
+      <span>B.S. Data Science · University of Illinois Chicago</span>
+      <span class="hero__sep" aria-hidden="true">/</span>
+      <span>Chicago, IL</span>
     </div>
 
+    <h1 class="hero__title reveal">
+      Data science that <span class="grad">leaves the notebook.</span>
+    </h1>
+
+    <div class="hero__grid">
+
     <div class="hero__copy">
-      <p class="eyebrow reveal">DATA SCIENTIST · ML ENGINEER · ANALYST</p>
-      <h1 class="hero__title reveal">
-        I turn messy data into
-        <span class="grad">decisions people act on.</span>
-      </h1>
       <p class="hero__lead reveal">
-        Data Science @ University of Illinois Chicago. Three summers of internships at the
-        Discovery Partners Institute, a NASA Space Apps award, and a habit of shipping
-        the model <em>and</em> the interface around it.
+        I'm Zona. I pull the data, clean it, model it — and then build the dashboard or the API
+        that puts it in front of someone who doesn't write code.
       </p>
       <p class="hero__body reveal">
-        I work end to end: pull the data, clean it, model it, then build the dashboard or API
-        that makes it usable. Recently that's meant heat-risk classifiers, RAG pipelines on
-        Google Cloud, and a research explorer for 600+ NASA bioscience papers.
+        I'm a senior studying data science at UIC. Three summers of internships at the Discovery
+        Partners Institute, a NASA Space Apps award, and a running list of things I built because
+        somebody needed an answer: heat-risk classifiers, RAG pipelines on Google Cloud, a research
+        explorer for 600+ NASA bioscience papers.
       </p>
 
       <div class="terminal reveal" aria-hidden="true">
@@ -137,6 +125,22 @@
           <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>
         </a>
       </div>
+    </div>
+
+    <div class="hero__portrait reveal">
+      <figure class="portrait" id="portraitFrame">
+        <div class="portrait__halo" aria-hidden="true"></div>
+        <!-- To use a different photo, drop it in assets/ and change the src below.
+             If the file is missing, the illustrated placeholder loads instead. -->
+        <img src="assets/profile.jpg" alt="Zona Noman" class="portrait__img"
+             onerror="this.onerror=null; this.src='assets/bitmoji.svg';" />
+        <figcaption class="portrait__cap">
+          <span class="dot-live" aria-hidden="true"></span>
+          Open to 2027 roles
+        </figcaption>
+      </figure>
+    </div>
+
     </div>
   </div>
 
@@ -686,7 +690,7 @@
       <p class="eyebrow">05 — ABOUT</p>
       <h2 class="section__title">The short version.</h2>
       <p class="about__lead">
-        I'm a Data Science undergrad at the University of Illinois Chicago, graduating May 2027.
+        I'm a senior at the University of Illinois Chicago, finishing a B.S. in Data Science in May 2027.
       </p>
       <p>
         It started with a five-week data intensive at the Discovery Partners Institute in 2022, where
@@ -745,9 +749,9 @@
         <h3 class="panel__title">Currently</h3>
         <ul class="now">
           <li><span class="now__k">Building</span><span class="now__v">CloudPulse — RAG on Google Cloud</span></li>
-          <li><span class="now__k">Studying</span><span class="now__v">Machine Learning &amp; Linear Programming</span></li>
+          <li><span class="now__k">Studying</span><span class="now__v">Senior year — ML &amp; Linear Programming</span></li>
           <li><span class="now__k">Based in</span><span class="now__v">Chicago, IL</span></li>
-          <li><span class="now__k">Looking for</span><span class="now__v">Summer 2027 DS/DA internships</span></li>
+          <li><span class="now__k">Looking for</span><span class="now__v">2027 data science &amp; analytics roles</span></li>
         </ul>
       </div>
     </aside>
@@ -760,8 +764,9 @@
     <p class="eyebrow">06 — CONTACT</p>
     <h2 class="contact__title">Got data that needs<br>a second opinion?</h2>
     <p class="contact__sub">
-      I'm looking for data science and analytics internships for Summer 2027 — and I'm always up for
-      talking about a weird dataset. Email is fastest.
+      I'm a senior at UIC graduating in May 2027, and I'm looking for data science and analytics
+      roles for 2027 — internship or new grad. I'm also always up for talking about a weird
+      dataset. Email is fastest.
     </p>
     <a href="mailto:zonanoman2022@gmail.com" class="contact__mail">zonanoman2022@gmail.com</a>
     <div class="contact__row">

@@ -230,15 +230,17 @@
   }
 
   /* ---------------------------------------------------- portrait tilt */
-  const portrait = $('#portraitCard');
-  if (portrait && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+  const portrait = $('#portraitFrame');
+  const portraitImg = portrait && $('.portrait__img', portrait);
+  if (portraitImg && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
     portrait.addEventListener('mousemove', (e) => {
       const r = portrait.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width - 0.5;
       const py = (e.clientY - r.top) / r.height - 0.5;
-      portrait.style.transform = `perspective(900px) rotateY(${px * 8}deg) rotateX(${-py * 8}deg) translateZ(0)`;
+      portraitImg.style.transform =
+        `perspective(1000px) rotateY(${px * 5}deg) rotateX(${-py * 5}deg) scale(1.015)`;
     });
-    portrait.addEventListener('mouseleave', () => { portrait.style.transform = ''; });
+    portrait.addEventListener('mouseleave', () => { portraitImg.style.transform = ''; });
   }
 
   /* ---------------------------------------------------- card glow */
