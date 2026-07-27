@@ -508,6 +508,15 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 .awards__icon { font-size: 1.1rem; line-height: 1.4; }
 .awards strong { display: block; font-size: .95rem; font-weight: 600; }
 .awards span:not(.awards__icon) { display: block; font-size: .82rem; color: var(--text-3); line-height: 1.5; }
+.thread { display: flex; flex-direction: column; gap: 15px; }
+.thread li { position: relative; padding-left: 17px; }
+.thread li::before {
+  content: ''; position: absolute; left: 0; top: .55em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2);
+}
+.thread strong { display: block; font-size: .9rem; font-weight: 600; }
+.thread span { display: block; font-size: .81rem; color: var(--text-3); line-height: 1.5; }
+
 .now { display: flex; flex-direction: column; gap: 13px; }
 .now li { display: flex; justify-content: space-between; gap: 14px; font-size: .86rem; align-items: baseline; }
 .now__k { color: var(--text-3); font-family: var(--mono); font-size: .74rem; white-space: nowrap; }
