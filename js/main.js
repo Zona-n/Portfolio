@@ -117,29 +117,45 @@
     counters.forEach(runCounter);
   }
 
-  /* ------------------------------------------- svg chart animation */
-  function animateViz(card) {
-    $$('.viz-bars rect', card).forEach((r, i) => {
-      const h = +r.dataset.h;
-      setTimeout(() => { r.setAttribute('height', h); r.setAttribute('y', 150 - h); }, i * 90);
+  /* ------------------------------------------- screenshots */
+  // Every .shot points at a file in assets/shots/. The figure renders as a
+  // labelled placeholder until that file actually exists and decodes.
+  $$('.shot img').forEach((img) => {
+    const reveal = () => {
+      if (img.naturalWidth > 0) img.closest('.shot').classList.add('has-img');
+    };
+    if (img.complete) reveal();
+    else img.addEventListener('load', reveal);
+  });
+
+  $$('[data-shots]').forEach((box) => {
+    const track = $('.shots__track', box);
+    const slides = $$('.shot', track);
+    const dotsWrap = $('[data-shots-dots]', box);
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Show image ${i + 1} of ${slides.length}`);
+      dot.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(dot);
     });
-    $$('.risk-rows rect', card).forEach((r, i) => {
-      setTimeout(() => r.setAttribute('width', r.dataset.w), i * 90);
-    });
-  }
-  const vizCards = $$('.viz-card');
-  if ('IntersectionObserver' in window) {
-    const vo = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        animateViz(entry.target);
-        obs.unobserve(entry.target);
-      });
-    }, { threshold: 0.35 });
-    vizCards.forEach((el) => vo.observe(el));
-  } else {
-    vizCards.forEach(animateViz);
-  }
+
+    function go(next) {
+      index = (next + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      $$('button', dotsWrap).forEach((d, i) =>
+        d.setAttribute('aria-current', String(i === index)));
+      slides.forEach((s, i) => s.setAttribute('aria-hidden', String(i !== index)));
+    }
+
+    $('[data-shots-prev]', box).addEventListener('click', () => go(index - 1));
+    $('[data-shots-next]', box).addEventListener('click', () => go(index + 1));
+    go(0);
+  });
 
   /* ---------------------------------------------------- typing line */
   const typeTarget = $('#typeTarget');
@@ -326,9 +342,9 @@
     { label: 'Email zonanoman2022@gmail.com', kind: 'link', action: () => { window.location.href = 'mailto:zonanoman2022@gmail.com'; } },
     { label: 'GitHub — @Zona-n', kind: 'link', action: () => window.open('https://github.com/Zona-n', '_blank') },
     { label: 'LinkedIn', kind: 'link', action: () => window.open('https://www.linkedin.com/in/zona-noman-a05479243', '_blank') },
+    { label: 'CloudPulse — Google Cloud, Vertex AI RAG', kind: 'project', action: () => window.open('https://github.com/Chicago-Sprinterns-2026/CloudPulse', '_blank') },
     { label: 'Brickonaut — NASA Space Apps', kind: 'project', action: () => window.open('https://github.com/Zona-n/NASA-SPACE-APPS', '_blank') },
     { label: 'iHEATRISK — heat risk model', kind: 'project', action: () => window.open('https://github.com/Zona-n/heatrisk_intervention_library', '_blank') },
-    { label: 'CloudPulse — Vertex AI RAG', kind: 'project', action: () => window.open('https://github.com/Chicago-Sprinterns-2026/CloudPulse', '_blank') },
     { label: 'Stimtelligent — agentic AI app', kind: 'project', action: () => window.open('https://github.com/Zona-n/Stimtelligent_App', '_blank') },
     { label: 'Toggle light / dark theme', kind: 'action', action: () => $('#themeToggle').click() },
   ];

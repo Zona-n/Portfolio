@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Zona Noman — Data Scientist &amp; Analyst</title>
-<meta name="description" content="Zona Noman is a senior studying data science at UIC. Analyst, ML intern, program coordinator, iOS engineer — six titles of data work, with a focus on accessible products built for the people the default leaves out." />
+<meta name="description" content="Zona Noman is a senior studying data science at UIC. Four data internships including Google Cloud, plus coordination and outreach roles, with a focus on accessible products built for the people the default leaves out." />
 <meta name="author" content="Zona Noman" />
 <meta name="theme-color" content="#0A0A0C" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Zona Noman — Data Scientist &amp; Analyst" />
-<meta property="og:description" content="Six job titles, all of them data work. Accessibility-focused analytics, ML, and product. NASA Space Apps award winner. Senior, B.S. Data Science @ UIC." />
+<meta property="og:description" content="Four data internships including Google Cloud. Accessibility-focused analytics, ML, and product. Senior, B.S. Data Science @ UIC." />
 <meta property="og:url" content="https://zona-n.github.io/Portfolio/" />
 <meta name="twitter:card" content="summary_large_image" />
 
@@ -85,13 +85,8 @@
 
     <div class="hero__copy">
       <p class="hero__lead reveal">
-        I'm Zona. I pull the data, clean it, model it — and then build the dashboard or the API
-        that puts it in front of someone who doesn't write code.
-      </p>
-      <p class="hero__body reveal">
-        I've done that as an analyst, an ML intern, a program coordinator, an outreach lead, and an
-        iOS engineer — six titles, all of them data work, almost all of them on a team. The projects
-        I care about most are the accessible ones: built for the people the default solution leaves out.
+        I'm Zona. I find the data, make sense of it, and build the thing that puts it in front of
+        someone who doesn't write code.
       </p>
 
       <div class="terminal reveal" aria-hidden="true">
@@ -129,7 +124,7 @@
     <div class="hero__portrait reveal">
       <figure class="portrait" id="portraitFrame">
         <div class="portrait__halo" aria-hidden="true"></div>
-        <!-- To use a different photo, drop it in assets/ and change the src below.
+        <!-- To use a different photo, replace assets/profile.jpg with the same filename.
              If the file is missing, the illustrated placeholder loads instead. -->
         <img src="assets/profile.jpg" alt="Zona Noman" class="portrait__img"
              onerror="this.onerror=null; this.src='assets/bitmoji.svg';" />
@@ -149,11 +144,11 @@
 <!-- ============================ STATS ============================ -->
 <section class="stats" aria-label="Highlights">
   <div class="wrap stats__grid">
-    <div class="stat reveal"><span class="stat__num" data-count="6">0</span><span class="stat__label">Job titles held —<br>every one of them data work</span></div>
-    <div class="stat reveal"><span class="stat__num" data-count="5">0</span><span class="stat__label">Projects built for people<br>the default leaves out</span></div>
-    <div class="stat reveal"><span class="stat__num" data-count="50">0</span><span class="stat__label">Interns I coordinated<br>in one summer at DPI</span></div>
+    <div class="stat reveal"><span class="stat__num" data-count="4">0</span><span class="stat__label">Data internships<br>since 2022</span></div>
+    <div class="stat reveal"><span class="stat__num" data-count="50">0</span><span class="stat__label">Interns coordinated<br>in one summer</span></div>
     <div class="stat reveal"><span class="stat__num" data-count="40" data-suffix="%">0</span><span class="stat__label">Manual review time cut<br>with an AI screening tool</span></div>
-    <div class="stat reveal"><span class="stat__num" data-count="600" data-suffix="+">0</span><span class="stat__label">NASA bioscience papers<br>made searchable</span></div>
+    <div class="stat reveal"><span class="stat__num" data-count="49" data-suffix="K">0</span><span class="stat__label">Cloud release notes<br>indexed for CloudPulse</span></div>
+    <div class="stat reveal"><span class="stat__num" data-count="5">0</span><span class="stat__label">Projects built for people<br>the default leaves out</span></div>
   </div>
 </section>
 
@@ -163,17 +158,80 @@
     <div class="section__head reveal">
       <p class="eyebrow">01 — SELECTED WORK</p>
       <h2 class="section__title">Three things I built that I'd<br>happily be quizzed on.</h2>
-      <p class="section__sub">Each one started with a real dataset and a person who needed an answer from it.</p>
     </div>
 
     <div class="cases">
 
-      <!-- CASE 1 -->
+      <!-- CASE 1 — CloudPulse -->
       <article class="case reveal">
         <div class="case__meta">
           <span class="case__index">01</span>
           <div class="case__tags">
-            <span class="tag tag--award">🏆 Storytelling Award</span>
+            <span class="tag">Google Cloud</span>
+            <span class="tag">Chicago Sprinternship 2026</span>
+            <span class="tag">Team of 10</span>
+          </div>
+        </div>
+        <div class="case__body">
+          <div class="case__text">
+            <h3 class="case__title">CloudPulse</h3>
+            <p class="case__kicker">A grounded AI assistant that keeps support engineers current on Google Cloud changes.</p>
+            <p>
+              Google Cloud ships across ~300 products faster than anyone can track, and a
+              general-purpose model answers from stale training data. CloudPulse cites a real source
+              for every claim. Built in three weeks with a team of 10 at Google's Chicago office.
+            </p>
+            <ul class="case__points">
+              <li><strong>I owned the data layer.</strong> A BigQuery pipeline that extracted 49,446 release notes across 296 products and 16 years, HTML-stripped and chunked for import.</li>
+              <li>Vertex AI RAG grounding over a curated corpus, plus a Vertex AI Search data store for live official docs.</li>
+              <li>Unified both retrievers in one tool layer with a keyword fallback, so empty results degrade instead of hallucinating.</li>
+            </ul>
+            <div class="chips">
+              <span>Python</span><span>BigQuery</span><span>Vertex AI RAG</span><span>Vertex AI Search</span><span>Gemini</span><span>Cloud Run</span>
+            </div>
+            <div class="case__links">
+              <a href="https://github.com/Chicago-Sprinterns-2026/CloudPulse" target="_blank" rel="noopener" class="link-arrow">View the repo</a>
+            </div>
+          </div>
+
+          <div class="case__visual">
+            <div class="shots" data-shots>
+              <div class="shots__viewport">
+                <div class="shots__track">
+                  <figure class="shot" data-src="assets/shots/cloudpulse-01.png">
+                    <img src="assets/shots/cloudpulse-01.png" alt="CloudPulse chat interface" loading="lazy" />
+                    <figcaption>Grounded chat with citations</figcaption>
+                  </figure>
+                  <figure class="shot" data-src="assets/shots/cloudpulse-02.png">
+                    <img src="assets/shots/cloudpulse-02.png" alt="CloudPulse release history view" loading="lazy" />
+                    <figcaption>Live release history</figcaption>
+                  </figure>
+                  <figure class="shot" data-src="assets/shots/cloudpulse-03.png">
+                    <img src="assets/shots/cloudpulse-03.png" alt="CloudPulse generated one-pager" loading="lazy" />
+                    <figcaption>Generated one-pager</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="shots__bar">
+                <button class="shots__nav" data-shots-prev aria-label="Previous image">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+                </button>
+                <div class="shots__dots" data-shots-dots></div>
+                <button class="shots__nav" data-shots-next aria-label="Next image">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 2 — Brickonaut -->
+      <article class="case case--flip reveal">
+        <div class="case__meta">
+          <span class="case__index">02</span>
+          <div class="case__tags">
+            <span class="tag tag--award">Storytelling Award</span>
             <span class="tag">NASA Space Apps 2025</span>
           </div>
         </div>
@@ -182,16 +240,14 @@
             <h3 class="case__title">Brickonaut</h3>
             <p class="case__kicker">A semantic research dashboard for 600+ NASA bioscience publications.</p>
             <p>
-              NASA has run hundreds of biology experiments in space, and the findings are scattered
-              across publications nobody has time to read. I built the backend that ingests them,
-              embeds them, and answers questions like "what do we actually know about bone loss in
-              microgravity — and where do studies disagree?"
+              NASA has run hundreds of biology experiments in space and the findings sit in papers
+              nobody has time to read. I built the backend that ingests, embeds, and answers questions
+              across all of them.
             </p>
             <ul class="case__points">
-              <li>Flask + pandas ingestion pipeline over 608 publications, with Azure OpenAI and the Semantic Kernel SDK doing summarization and insight extraction.</li>
-              <li>Persona dashboards for scientists, program managers, and mission architects — each surfacing a different cut of the same corpus.</li>
-              <li>A consensus meter and gap map built with D3.js so users can see agreement and blank spots at a glance.</li>
-              <li>I led the storytelling for the demo, which won our panel at NASA Space Apps Chicago.</li>
+              <li>Flask and pandas ingestion over 608 publications, with Azure OpenAI and Semantic Kernel doing summarization.</li>
+              <li>Persona dashboards for scientists, program managers, and mission architects.</li>
+              <li>Led the demo storytelling, which won our panel at NASA Space Apps Chicago.</li>
             </ul>
             <div class="chips">
               <span>Python</span><span>Flask</span><span>pandas</span><span>Azure OpenAI</span><span>Semantic Kernel</span><span>D3.js</span>
@@ -202,37 +258,41 @@
           </div>
 
           <div class="case__visual">
-            <div class="viz-card">
-              <div class="viz-card__head"><span>consensus across 608 papers</span><span class="mono">brickonaut.py</span></div>
-              <svg class="viz" viewBox="0 0 320 180" role="img" aria-label="Bar chart showing research consensus by topic">
-                <line x1="30" y1="150" x2="310" y2="150" class="viz-axis"/>
-                <line x1="30" y1="20" x2="30" y2="150" class="viz-axis"/>
-                <g class="viz-bars">
-                  <rect x="46"  y="150" width="26" height="0" data-h="96"  rx="3"/>
-                  <rect x="86"  y="150" width="26" height="0" data-h="118" rx="3"/>
-                  <rect x="126" y="150" width="26" height="0" data-h="62"  rx="3"/>
-                  <rect x="166" y="150" width="26" height="0" data-h="104" rx="3"/>
-                  <rect x="206" y="150" width="26" height="0" data-h="44"  rx="3"/>
-                  <rect x="246" y="150" width="26" height="0" data-h="80"  rx="3"/>
-                </g>
-                <g class="viz-labels">
-                  <text x="59"  y="164">bone</text>
-                  <text x="99"  y="164">rad</text>
-                  <text x="139" y="164">plant</text>
-                  <text x="179" y="164">immu</text>
-                  <text x="219" y="164">micro</text>
-                  <text x="259" y="164">card</text>
-                </g>
-              </svg>
+            <div class="shots" data-shots>
+              <div class="shots__viewport">
+                <div class="shots__track">
+                  <figure class="shot" data-src="assets/shots/brickonaut-01.png">
+                    <img src="assets/shots/brickonaut-01.png" alt="Brickonaut dashboard" loading="lazy" />
+                    <figcaption>Scientist dashboard</figcaption>
+                  </figure>
+                  <figure class="shot" data-src="assets/shots/brickonaut-02.png">
+                    <img src="assets/shots/brickonaut-02.png" alt="Brickonaut consensus view" loading="lazy" />
+                    <figcaption>Consensus meter</figcaption>
+                  </figure>
+                  <figure class="shot" data-src="assets/shots/brickonaut-03.png">
+                    <img src="assets/shots/brickonaut-03.png" alt="Brickonaut gap map" loading="lazy" />
+                    <figcaption>Research gap map</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="shots__bar">
+                <button class="shots__nav" data-shots-prev aria-label="Previous image">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+                </button>
+                <div class="shots__dots" data-shots-dots></div>
+                <button class="shots__nav" data-shots-next aria-label="Next image">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- CASE 2 -->
-      <article class="case case--flip reveal">
+      <!-- CASE 3 — iHEATRISK -->
+      <article class="case reveal">
         <div class="case__meta">
-          <span class="case__index">02</span>
+          <span class="case__index">03</span>
           <div class="case__tags">
             <span class="tag">Discovery Partners Institute</span>
             <span class="tag">Summer 2025</span>
@@ -241,20 +301,19 @@
         <div class="case__body">
           <div class="case__text">
             <h3 class="case__title">iHEATRISK</h3>
-            <p class="case__kicker">A heat-risk recommendation system that tells people what to actually do.</p>
+            <p class="case__kicker">A heat-risk model that tells people what to actually do.</p>
             <p>
-              Extreme heat kills more people in the US than any other weather event, and most public
-              guidance is generic. I built a classifier that reads a person's health profile, work
-              setting, and living conditions, then returns recommendations grounded in real research
-              rather than a one-size-fits-all warning.
+              Extreme heat kills more Americans than any other weather event, and public guidance is
+              generic. This reads a person's health profile, work setting, and living conditions, then
+              returns advice grounded in real research.
             </p>
             <ul class="case__points">
-              <li>Read 50 research documents on heat risk, extracted the interventions, and categorized them into 5 types: hydration, activity &amp; rest, environmental control, monitoring, and medical care.</li>
-              <li>No training data existed, so I generated 500 realistic user profiles with pandas, NumPy, and Faker — modeling demographics, chronic conditions, BMI, medications, and cooling access.</li>
-              <li>Trained a scikit-learn Random Forest to predict risk across five levels, then wrapped it in a Flask API serving the iHEATRISK site.</li>
+              <li>Read 50 research documents and categorized the interventions into 5 types.</li>
+              <li>No training data existed, so I generated 500 realistic user profiles with pandas, NumPy, and Faker.</li>
+              <li>Trained a scikit-learn Random Forest across five risk levels, served through a Flask API.</li>
             </ul>
             <div class="chips">
-              <span>Python</span><span>scikit-learn</span><span>Random Forest</span><span>pandas</span><span>NumPy</span><span>Faker</span><span>Flask</span>
+              <span>Python</span><span>scikit-learn</span><span>Random Forest</span><span>pandas</span><span>Faker</span><span>Flask</span>
             </div>
             <div class="case__links">
               <a href="https://github.com/Zona-n/heatrisk_intervention_library" target="_blank" rel="noopener" class="link-arrow">View the code</a>
@@ -262,69 +321,28 @@
           </div>
 
           <div class="case__visual">
-            <div class="viz-card">
-              <div class="viz-card__head"><span>predicted risk distribution</span><span class="mono">n = 500</span></div>
-              <svg class="viz" viewBox="0 0 320 180" role="img" aria-label="Stacked risk level distribution">
-                <g class="risk-rows">
-                  <g><text x="12" y="34" class="risk-label">very low</text><rect x="96" y="22" height="14" width="0" data-w="60"  rx="7"/><text x="300" y="34" class="risk-val">12%</text></g>
-                  <g><text x="12" y="63" class="risk-label">low</text>     <rect x="96" y="51" height="14" width="0" data-w="102" rx="7"/><text x="300" y="63" class="risk-val">21%</text></g>
-                  <g><text x="12" y="92" class="risk-label">moderate</text><rect x="96" y="80" height="14" width="0" data-w="160" rx="7"/><text x="300" y="92" class="risk-val">33%</text></g>
-                  <g><text x="12" y="121" class="risk-label">high</text>   <rect x="96" y="109" height="14" width="0" data-w="112" rx="7"/><text x="300" y="121" class="risk-val">23%</text></g>
-                  <g><text x="12" y="150" class="risk-label">very high</text><rect x="96" y="138" height="14" width="0" data-w="54" rx="7"/><text x="300" y="150" class="risk-val">11%</text></g>
-                </g>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- CASE 3 -->
-      <article class="case reveal">
-        <div class="case__meta">
-          <span class="case__index">03</span>
-          <div class="case__tags">
-            <span class="tag tag--live">● In progress</span>
-            <span class="tag">Chicago Sprinterns 2026</span>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__text">
-            <h3 class="case__title">CloudPulse</h3>
-            <p class="case__kicker">A grounded RAG agent that keeps up with Google Cloud release notes so engineers don't have to.</p>
-            <p>
-              Cloud platforms ship changes faster than anyone can read them. CloudPulse ingests the
-              live release-notes ledger and answers questions about what changed, grounded in
-              official documentation instead of the model's memory.
-            </p>
-            <ul class="case__points">
-              <li>Built the data layer: a BigQuery extraction pipeline over the public release-notes dataset, automated in the cloud so there's no manual ingest step.</li>
-              <li>Implemented Vertex AI RAG grounding against a corpus of Google Console documentation, plus a Vertex AI Search data store fallback for official docs.</li>
-              <li>Combined RAG retrieval and datastore search in one tool layer with keyword fallback, so answers degrade gracefully instead of hallucinating.</li>
-            </ul>
-            <div class="chips">
-              <span>Python</span><span>Vertex AI</span><span>BigQuery</span><span>RAG</span><span>Google Cloud</span><span>Agent Platform</span>
-            </div>
-            <div class="case__links">
-              <a href="https://github.com/Chicago-Sprinterns-2026/CloudPulse" target="_blank" rel="noopener" class="link-arrow">View the repo</a>
-            </div>
-          </div>
-
-          <div class="case__visual">
-            <div class="viz-card">
-              <div class="viz-card__head"><span>retrieval pipeline</span><span class="mono">grounded</span></div>
-              <svg class="viz viz--flow" viewBox="0 0 320 180" role="img" aria-label="Diagram of the retrieval pipeline">
-                <g class="flow">
-                  <rect x="16"  y="26" width="88" height="34" rx="8"/><text x="60"  y="47">BigQuery</text>
-                  <rect x="16"  y="76" width="88" height="34" rx="8"/><text x="60"  y="97">Vertex Search</text>
-                  <rect x="16"  y="126" width="88" height="34" rx="8"/><text x="60" y="147">RAG corpus</text>
-                  <rect x="132" y="76" width="72" height="34" rx="8"/><text x="168" y="97">tools.py</text>
-                  <rect x="228" y="76" width="76" height="34" rx="8"/><text x="266" y="97">agent</text>
-                  <path class="flow-line" d="M104 43 C120 43 120 93 132 93"/>
-                  <path class="flow-line" d="M104 93 H132"/>
-                  <path class="flow-line" d="M104 143 C120 143 120 93 132 93"/>
-                  <path class="flow-line" d="M204 93 H228"/>
-                </g>
-              </svg>
+            <div class="shots" data-shots>
+              <div class="shots__viewport">
+                <div class="shots__track">
+                  <figure class="shot" data-src="assets/shots/iheatrisk-01.png">
+                    <img src="assets/shots/iheatrisk-01.png" alt="iHEATRISK profile survey" loading="lazy" />
+                    <figcaption>Profile survey</figcaption>
+                  </figure>
+                  <figure class="shot" data-src="assets/shots/iheatrisk-02.png">
+                    <img src="assets/shots/iheatrisk-02.png" alt="iHEATRISK recommendations" loading="lazy" />
+                    <figcaption>Personalized recommendations</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="shots__bar">
+                <button class="shots__nav" data-shots-prev aria-label="Previous image">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+                </button>
+                <div class="shots__dots" data-shots-dots></div>
+                <button class="shots__nav" data-shots-next aria-label="Next image">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -339,10 +357,10 @@
   <div class="wrap">
     <div class="section__head reveal">
       <p class="eyebrow">02 — EXPERIENCE</p>
-      <h2 class="section__title">Six job titles.<br>Mostly the same job.</h2>
+      <h2 class="section__title">Half of these were data roles.<br>The rest taught me to explain them.</h2>
       <p class="section__sub">
-        Data analyst, data scientist, ML intern, program coordinator, outreach lead, iOS engineer.
-        Every one of them ran on data — and almost none of them ran on me alone.
+        Analyst, data scientist, ML intern, cloud intern — then program coordinator and outreach
+        lead, where the work was people rather than pipelines.
       </p>
     </div>
 
@@ -350,83 +368,96 @@
 
       <li class="tl reveal">
         <div class="tl__dot" aria-hidden="true"></div>
-        <div class="tl__when">Jun 2025 — Aug 2025</div>
+        <div class="tl__when">Jul 13 — Jul 31, 2026</div>
+        <div class="tl__card">
+          <div class="tl__top">
+            <h3>Google Cloud Intern <span class="tl__org">· Chicago Sprinternship 2026</span></h3>
+            <span class="tl__place">Google office · Chicago, IL · Team of 10</span>
+          </div>
+          <ul>
+            <li>Built the data layer for CloudPulse, a grounded AI assistant for Google Cloud product changes: a BigQuery pipeline over 49,446 release notes spanning 296 products and 16 years.</li>
+            <li>Implemented Vertex AI RAG grounding and a Vertex AI Search data store, unified behind one tool layer with keyword fallback.</li>
+          </ul>
+          <div class="chips chips--sm"><span>BigQuery</span><span>Vertex AI</span><span>Gemini</span><span>Python</span></div>
+        </div>
+      </li>
+
+      <li class="tl reveal">
+        <div class="tl__dot" aria-hidden="true"></div>
+        <div class="tl__when">Jun — Aug 2025</div>
         <div class="tl__card">
           <div class="tl__top">
             <h3>Machine Learning Intern <span class="tl__org">· Discovery Partners Institute</span></h3>
             <span class="tl__place">University of Illinois System · Chicago, IL</span>
           </div>
           <ul>
-            <li>Collected 50 research documents on heat risk, extracted trusted recommendations, and categorized them into 5 intervention types.</li>
-            <li>Generated a synthetic dataset of 500 user profiles with pandas, NumPy, and Faker to train a recommendation model where no labeled data existed.</li>
-            <li>Shipped a heat-risk recommendation system for the iHEATRISK website using a Flask API and a scikit-learn Random Forest classifier.</li>
+            <li>Generated a synthetic dataset of 500 user profiles to train a recommendation model where no labeled data existed.</li>
+            <li>Shipped the iHEATRISK heat-risk system: a scikit-learn Random Forest behind a Flask API.</li>
           </ul>
           <div class="chips chips--sm"><span>scikit-learn</span><span>Flask</span><span>pandas</span><span>NumPy</span></div>
         </div>
       </li>
 
       <li class="tl reveal">
-        <div class="tl__dot" aria-hidden="true"></div>
-        <div class="tl__when">Jun 2025 — Aug 2025</div>
-        <div class="tl__card">
+        <div class="tl__dot tl__dot--soft" aria-hidden="true"></div>
+        <div class="tl__when">Jun — Aug 2025</div>
+        <div class="tl__card tl__card--soft">
           <div class="tl__top">
             <h3>Program Coordinator <span class="tl__org">· Discovery Partners Institute</span></h3>
-            <span class="tl__place">Concurrent with the ML internship</span>
+            <span class="tl__place">Operations and communications · concurrent with the ML internship</span>
           </div>
           <ul>
-            <li>Coordinated 50 interns — attendance logging, resource allocation, and scheduling across the program.</li>
-            <li>Produced 15+ social posts recognizing speakers and events across the Chicago tech ecosystem, raising visibility for the program and its volunteers.</li>
+            <li>Coordinated 50 interns across attendance, scheduling, and resource allocation.</li>
+            <li>Produced 15+ posts recognizing speakers and events across the Chicago tech ecosystem.</li>
           </ul>
+          <div class="chips chips--sm"><span>Program ops</span><span>Communications</span></div>
         </div>
       </li>
 
       <li class="tl reveal">
         <div class="tl__dot" aria-hidden="true"></div>
-        <div class="tl__when">Jun 2024 — Aug 2024</div>
+        <div class="tl__when">Jun — Aug 2024</div>
         <div class="tl__card">
           <div class="tl__top">
             <h3>Data Science Intern <span class="tl__org">· Discovery Partners Institute</span></h3>
             <span class="tl__place">University of Illinois System · Chicago, IL</span>
           </div>
           <ul>
-            <li>Filtered, cleaned, and merged Illinois census datasets in RStudio and SQL so IWERC could identify underserved regions and plan resources against real need.</li>
-            <li>Built trend forecasting models on educational access data across districts, feeding recommendations into state-level policy work.</li>
-            <li>Modeled airborne virus patterns in poultry farms across 50 states from USDA data, and built Excel dashboards that made at-risk zones obvious to stakeholders.</li>
-            <li>Cut manual review time 40% by optimizing a Gemini-powered Python chatbot that helps A Better Chicago find mission-aligned nonprofits.</li>
-            <li>Designed demographic dashboards visualizing high-need areas across Chicago, directly supporting grant allocation decisions.</li>
+            <li>Merged Illinois census datasets in RStudio and SQL so IWERC could find underserved regions, and built forecasting models that fed state-level policy recommendations.</li>
+            <li>Cut manual review time 40% by optimizing a Gemini-powered chatbot for A Better Chicago.</li>
+            <li>Modeled airborne virus patterns in poultry farms across 50 states from USDA data, with Excel dashboards for stakeholders.</li>
           </ul>
           <div class="chips chips--sm"><span>R / RStudio</span><span>SQL</span><span>Python</span><span>Gemini API</span><span>Excel</span></div>
         </div>
       </li>
 
       <li class="tl reveal">
-        <div class="tl__dot" aria-hidden="true"></div>
+        <div class="tl__dot tl__dot--soft" aria-hidden="true"></div>
         <div class="tl__when">Aug 2025 — Apr 2026</div>
-        <div class="tl__card">
+        <div class="tl__card tl__card--soft">
           <div class="tl__top">
             <h3>Outreach Member <span class="tl__org">· Capture the Flame</span></h3>
-            <span class="tl__place">Chicago's largest cybersecurity competition</span>
+            <span class="tl__place">Marketing and partnerships · Chicago's largest cybersecurity competition</span>
           </div>
           <ul>
-            <li>Drove outreach to universities and institutions, growing student engagement and participation in the competition.</li>
-            <li>Led social media strategy end to end — ideation, filming, editing, and publishing posts and reels.</li>
-            <li>Tracked outreach and engagement metrics in Excel to see what was working and reallocate effort toward it.</li>
-            <li>Built external partnerships with companies and organizations to expand the event's reach.</li>
+            <li>Drove university outreach and built company partnerships to grow participation.</li>
+            <li>Ran social media end to end — ideation, filming, editing, publishing — and tracked engagement in Excel to reallocate effort.</li>
           </ul>
+          <div class="chips chips--sm"><span>Outreach</span><span>Social strategy</span><span>Partnerships</span></div>
         </div>
       </li>
 
       <li class="tl reveal">
         <div class="tl__dot" aria-hidden="true"></div>
-        <div class="tl__when">May 2022 — Jul 2022</div>
+        <div class="tl__when">May — Jul 2022</div>
         <div class="tl__card">
           <div class="tl__top">
             <h3>Data Analyst Intern <span class="tl__org">· Discovery Partners Institute</span></h3>
-            <span class="tl__place">Where it all started · Chicago, IL</span>
+            <span class="tl__place">Where it started · Chicago, IL</span>
           </div>
           <ul>
-            <li>Joined a five-week data science intensive with 15 other interns, then built my own capstone: an analysis of 21 years of Chicago crime data (2001–2022) from the Chicago Data Portal in R.</li>
-            <li>Found the story in it: 2001 as the peak year, a sustained decline from 2018, a homicide spike in 2016, a shooting reduction by 2019, and a 64% increase in Downtown shootings in 2022.</li>
+            <li>Joined a five-week data science intensive, then built my own capstone in R: 21 years of Chicago crime data from the Chicago Data Portal.</li>
+            <li>Found the story in it — a peak in 2001, decline from 2018, and a 64% rise in Downtown shootings in 2022.</li>
           </ul>
           <div class="chips chips--sm"><span>R</span><span>Chicago Data Portal</span></div>
         </div>
@@ -455,147 +486,154 @@
     <div class="grid" id="projectGrid">
 
       <article class="card reveal" data-cat="app ml">
-        <div class="card__top">
-          <span class="card__year">Oct 2025</span>
-          <span class="card__role">Co-founder &amp; iOS Engineer</span>
+        <figure class="shot shot--thumb" data-src="assets/shots/trustpath.png">
+          <img src="assets/shots/trustpath.png" alt="TrustPath iOS app" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">Oct 2025</span>
+            <span class="card__role">Co-founder &amp; iOS Engineer</span>
+          </div>
+          <h3 class="card__title">TrustPath</h3>
+          <p class="card__desc">
+            An iOS app matching people on parole or probation with community mentors. Shipped to the
+            App Store with a 4-person engineering team. I architected the Firebase backend in Swift
+            using MVVM and the repository pattern.
+          </p>
+          <div class="chips chips--sm"><span>Swift</span><span>Firebase</span><span>Firestore</span><span>MVVM</span></div>
         </div>
-        <h3 class="card__title">TrustPath</h3>
-        <p class="card__desc">
-          An iOS app that matches people on parole or probation with community volunteers, creating
-          structured mentor–mentee relationships with appointment tracking. Shipped to the App Store
-          with a 4-person engineering team.
-        </p>
-        <ul class="card__list">
-          <li>Architected the Firebase backend in Swift with Firestore and Clean Architecture (MVVM + Repository pattern).</li>
-          <li>Built async/await workflows for real-time persistence, profile serialization, and match assignment.</li>
-          <li>Owned the business-logic services: UserService, MatchingService, CalendarService.</li>
-        </ul>
-        <div class="chips chips--sm"><span>Swift</span><span>Firebase</span><span>Firestore</span><span>MVVM</span></div>
       </article>
 
       <article class="card reveal" data-cat="ml app a11y">
-        <div class="card__top">
-          <span class="card__year">Jun — Jul 2025</span>
-          <span class="card__role">Founder</span>
+        <figure class="shot shot--thumb" data-src="assets/shots/stimtelligent.png">
+          <img src="assets/shots/stimtelligent.png" alt="Stimtelligent app" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">Jun — Jul 2025</span>
+            <span class="card__role">Founder</span>
+          </div>
+          <h3 class="card__title">Stimtelligent</h3>
+          <p class="card__desc">
+            An agentic AI app that helps caregivers of nonverbal autistic individuals read stimming
+            behaviors. CoreML detection across hand flapping, rocking, and vocal stims, with a
+            feedback loop that adapts — all on-device.
+          </p>
+          <div class="chips chips--sm"><span>Swift</span><span>CoreML</span><span>Computer Vision</span></div>
+          <a class="card__link" href="https://github.com/Zona-n/Stimtelligent_App" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <h3 class="card__title">Stimtelligent</h3>
-        <p class="card__desc">
-          An agentic AI app that helps caregivers of nonverbal autistic individuals understand stimming
-          behaviors and respond well. Built at Everyone Can Code.
-        </p>
-        <ul class="card__list">
-          <li>Multimodal stress-cue detection combining computer vision and audio signal processing for real-time guidance.</li>
-          <li>CoreML pattern recognition across hand flapping, finger flicking, rocking, spinning, and vocal stims.</li>
-          <li>A feedback loop where caregivers rate suggestions, so responses adapt over time — all stored on-device, no cloud.</li>
-        </ul>
-        <div class="chips chips--sm"><span>Swift</span><span>CoreML</span><span>Computer Vision</span><span>Generative AI</span></div>
-        <a class="card__link" href="https://github.com/Zona-n/Stimtelligent_App" target="_blank" rel="noopener">GitHub ↗</a>
       </article>
 
       <article class="card reveal" data-cat="ml a11y">
-        <div class="card__top">
-          <span class="card__year">Apr 2025</span>
-          <span class="card__role">Accessibility Hackathon · Google Chicago</span>
+        <figure class="shot shot--thumb" data-src="assets/shots/emocam.png">
+          <img src="assets/shots/emocam.png" alt="Emo-Cam prototype" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">Apr 2025</span>
+            <span class="card__role">Accessibility Hackathon · Google Chicago</span>
+          </div>
+          <h3 class="card__title">Emo-Cam</h3>
+          <p class="card__desc">
+            A wearable prototype for blind users: a camera reads the facial expression of the person
+            in front of them and narrates the emotion out loud, via Teachable Machine and
+            text-to-speech.
+          </p>
+          <div class="chips chips--sm"><span>Teachable Machine</span><span>Thunkable</span><span>TTS</span></div>
         </div>
-        <h3 class="card__title">Emo-Cam</h3>
-        <p class="card__desc">
-          A wearable prototype for blind users: a camera reads the facial expressions of the person in
-          front of them and narrates the emotion out loud.
-        </p>
-        <ul class="card__list">
-          <li>Trained a facial expression classifier in Teachable Machine across happy, sad, confused, and serious.</li>
-          <li>Wired detection to text-to-speech in Thunkable for hands-free, real-time narration.</li>
-        </ul>
-        <div class="chips chips--sm"><span>Teachable Machine</span><span>Thunkable</span><span>TTS</span></div>
-      </article>
-
-      <article class="card reveal" data-cat="ml data">
-        <div class="card__top">
-          <span class="card__year">Jan — May 2025</span>
-          <span class="card__role">Personal project</span>
-        </div>
-        <h3 class="card__title">Career Recommendation System</h3>
-        <p class="card__desc">
-          A career-matching tool that maps personality traits and interests onto roles — built because
-          the ones I found online felt like horoscopes.
-        </p>
-        <ul class="card__list">
-          <li>Scores users across the Big Five traits in Python and pandas, then ranks matching roles.</li>
-          <li>Custom scoring algorithm, tuned against real user testing rather than assumptions.</li>
-          <li>Deployed as an interactive Flask app for students exploring tech careers.</li>
-        </ul>
-        <div class="chips chips--sm"><span>Python</span><span>pandas</span><span>Flask</span></div>
-        <a class="card__link" href="https://github.com/Zona-n/datascienceproj" target="_blank" rel="noopener">GitHub ↗</a>
-      </article>
-
-      <article class="card reveal" data-cat="app data">
-        <div class="card__top">
-          <span class="card__year">Feb 2025</span>
-          <span class="card__role">SparkHacks · UIC</span>
-        </div>
-        <h3 class="card__title">Farm-to-Pantry Platform</h3>
-        <p class="card__desc">
-          A full-stack platform that routes surplus produce from farmers to nearby food pantries
-          instead of landfills.
-        </p>
-        <ul class="card__list">
-          <li>AI-powered search matching donation needs against pantry locations and farm inventory.</li>
-          <li>Dashboards for both sides — donors and pantries — with live need data and direct messaging.</li>
-        </ul>
-        <div class="chips chips--sm"><span>Full-stack</span><span>AI search</span><span>Dashboards</span></div>
-      </article>
-
-      <article class="card reveal" data-cat="app">
-        <div class="card__top">
-          <span class="card__year">Aug 2025</span>
-          <span class="card__role">Side project</span>
-        </div>
-        <h3 class="card__title">World Flag Quiz</h3>
-        <p class="card__desc">
-          A browser game that quizzes you on 20 random world flags, built entirely client-side with no
-          backend and no sign-in.
-        </p>
-        <ul class="card__list">
-          <li>Live data from the REST Countries API with a full fallback dataset when the API is down.</li>
-          <li>Object-oriented ES6 game logic, async loading, and a responsive CSS Grid layout.</li>
-        </ul>
-        <div class="chips chips--sm"><span>JavaScript</span><span>CSS Grid</span><span>REST API</span></div>
-        <a class="card__link" href="https://github.com/Zona-n/world-flag-quiz" target="_blank" rel="noopener">GitHub ↗</a>
       </article>
 
       <article class="card reveal" data-cat="a11y app">
-        <div class="card__top">
-          <span class="card__year">Apr 2023</span>
-          <span class="card__role">🏆 Most Impactful App</span>
+        <figure class="shot shot--thumb" data-src="assets/shots/doctor-visit.png">
+          <img src="assets/shots/doctor-visit.png" alt="Doctor-visit communicator app" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">Apr 2023</span>
+            <span class="card__role">Most Impactful App</span>
+          </div>
+          <h3 class="card__title">Doctor-Visit Communicator</h3>
+          <p class="card__desc">
+            An app helping hard-of-hearing kids communicate with doctors during appointments,
+            co-designed with deaf children at the Code Your Dreams Ideathon at Google Chicago.
+          </p>
+          <div class="chips chips--sm"><span>MIT App Inventor</span><span>Co-design</span></div>
         </div>
-        <h3 class="card__title">Doctor-Visit Communicator</h3>
-        <p class="card__desc">
-          An accessibility app built alongside deaf children at the Code Your Dreams Accessibility
-          Ideathon at Google Chicago, helping hard-of-hearing kids communicate with doctors during
-          appointments.
-        </p>
-        <ul class="card__list">
-          <li>Built in MIT App Inventor, co-designed directly with the kids it was for.</li>
-          <li>Won Most Impactful App.</li>
-        </ul>
-        <div class="chips chips--sm"><span>MIT App Inventor</span><span>Co-design</span></div>
+      </article>
+
+      <article class="card reveal" data-cat="ml data">
+        <figure class="shot shot--thumb" data-src="assets/shots/career-rec.png">
+          <img src="assets/shots/career-rec.png" alt="Career recommendation system" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">Jan — May 2025</span>
+            <span class="card__role">Personal project</span>
+          </div>
+          <h3 class="card__title">Career Recommendation System</h3>
+          <p class="card__desc">
+            A career-matching tool that scores users across the Big Five traits and ranks roles, with
+            a custom algorithm tuned against real user testing. Built because the ones online felt
+            like horoscopes.
+          </p>
+          <div class="chips chips--sm"><span>Python</span><span>pandas</span><span>Flask</span></div>
+          <a class="card__link" href="https://github.com/Zona-n/datascienceproj" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="app data">
+        <figure class="shot shot--thumb" data-src="assets/shots/farm-to-pantry.png">
+          <img src="assets/shots/farm-to-pantry.png" alt="Farm-to-Pantry platform" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">Feb 2025</span>
+            <span class="card__role">SparkHacks · UIC</span>
+          </div>
+          <h3 class="card__title">Farm-to-Pantry Platform</h3>
+          <p class="card__desc">
+            A full-stack platform routing surplus produce from farmers to nearby food pantries, with
+            AI-powered matching and dashboards on both sides.
+          </p>
+          <div class="chips chips--sm"><span>Full-stack</span><span>AI search</span><span>Dashboards</span></div>
+        </div>
       </article>
 
       <article class="card reveal" data-cat="data">
-        <div class="card__top">
-          <span class="card__year">2022 — 2024</span>
-          <span class="card__role">Analytics</span>
+        <figure class="shot shot--thumb" data-src="assets/shots/chicago-crime.png">
+          <img src="assets/shots/chicago-crime.png" alt="Chicago crime and census analysis" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">2022 — 2024</span>
+            <span class="card__role">Analytics</span>
+          </div>
+          <h3 class="card__title">Chicago Crime &amp; Census Analyses</h3>
+          <p class="card__desc">
+            Public-data work in R and SQL: 21 years of Chicago crime records, Illinois census merges
+            for workforce planning, and USDA poultry virus modeling across 50 states.
+          </p>
+          <div class="chips chips--sm"><span>R</span><span>SQL</span><span>Excel</span><span>Forecasting</span></div>
         </div>
-        <h3 class="card__title">Chicago Crime &amp; Census Analyses</h3>
-        <p class="card__desc">
-          Two years of public-data work: 21 years of Chicago crime records, Illinois census merges for
-          workforce planning, and USDA poultry-farm virus modeling across 50 states.
-        </p>
-        <ul class="card__list">
-          <li>R and SQL for cleaning and merging; Excel dashboards for the people who had to act on it.</li>
-          <li>Findings fed into state-level policy recommendations and grant allocation decisions.</li>
-        </ul>
-        <div class="chips chips--sm"><span>R</span><span>SQL</span><span>Excel</span><span>Forecasting</span></div>
+      </article>
+
+      <article class="card reveal" data-cat="app">
+        <figure class="shot shot--thumb" data-src="assets/shots/flag-quiz.png">
+          <img src="assets/shots/flag-quiz.png" alt="World Flag Quiz" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">Aug 2025</span>
+            <span class="card__role">Side project</span>
+          </div>
+          <h3 class="card__title">World Flag Quiz</h3>
+          <p class="card__desc">
+            A browser game on 20 random world flags, entirely client-side. Live data from the REST
+            Countries API with a full offline fallback.
+          </p>
+          <div class="chips chips--sm"><span>JavaScript</span><span>CSS Grid</span><span>REST API</span></div>
+          <a class="card__link" href="https://github.com/Zona-n/world-flag-quiz" target="_blank" rel="noopener">GitHub</a>
+        </div>
       </article>
 
     </div>
@@ -630,17 +668,15 @@
           <span class="pill pill--strong">R</span><span class="pill">Swift</span>
           <span class="pill">C / C++</span><span class="pill">JavaScript</span>
         </div>
-        <p>pandas, NumPy, matplotlib, scikit-learn day to day. R and RStudio for statistical work and anything census-shaped.</p>
       </div>
 
       <div class="skillgroup reveal">
         <h3><span class="skillgroup__num">02</span> Modeling &amp; ML</h3>
         <div class="skillgroup__items">
           <span class="pill pill--strong">Random Forests</span><span class="pill pill--strong">Regression</span>
-          <span class="pill">Demand forecasting</span><span class="pill">Price impact modeling</span>
-          <span class="pill">Optimization</span><span class="pill">Computer vision</span><span class="pill">RAG</span>
+          <span class="pill">Forecasting</span><span class="pill">Optimization</span>
+          <span class="pill">Computer vision</span><span class="pill">RAG</span>
         </div>
-        <p>Classification and forecasting where the hard part is usually the data, not the model.</p>
       </div>
 
       <div class="skillgroup reveal">
@@ -648,9 +684,8 @@
         <div class="skillgroup__items">
           <span class="pill pill--strong">BigQuery</span><span class="pill pill--strong">Vertex AI</span>
           <span class="pill">Google Cloud</span><span class="pill">Azure OpenAI</span>
-          <span class="pill">Firebase / Firestore</span><span class="pill">Flask APIs</span>
+          <span class="pill">Firebase</span><span class="pill">Flask APIs</span>
         </div>
-        <p>Automated ingestion pipelines, RAG corpora, and APIs that put a model behind an endpoint someone can actually call.</p>
       </div>
 
       <div class="skillgroup reveal">
@@ -660,27 +695,24 @@
           <span class="pill">Power BI</span><span class="pill">D3.js</span>
           <span class="pill">matplotlib</span><span class="pill">Dashboards</span>
         </div>
-        <p>PivotTables, VLOOKUP, and dashboards built for stakeholders who need the answer in ten seconds.</p>
       </div>
 
       <div class="skillgroup reveal">
         <h3><span class="skillgroup__num">05</span> Methods</h3>
         <div class="skillgroup__items">
           <span class="pill">Data cleaning</span><span class="pill">Hypothesis testing</span>
-          <span class="pill">Statistical inference</span><span class="pill">Synthetic data generation</span>
+          <span class="pill">Statistical inference</span><span class="pill">Synthetic data</span>
           <span class="pill">Stakeholder reporting</span>
         </div>
-        <p>Getting from a raw export to a defensible claim — and then explaining it to someone who doesn't write code.</p>
       </div>
 
       <div class="skillgroup reveal">
-        <h3><span class="skillgroup__num">06</span> Teams &amp; people</h3>
+        <h3><span class="skillgroup__num">06</span> Teams &amp; comms</h3>
         <div class="skillgroup__items">
           <span class="pill pill--strong">Cross-functional collaboration</span><span class="pill pill--strong">Co-design with users</span>
-          <span class="pill">Human-centered design</span><span class="pill">Program coordination</span>
-          <span class="pill">Stakeholder communication</span><span class="pill">Git</span>
+          <span class="pill">Program coordination</span><span class="pill">Outreach &amp; social strategy</span>
+          <span class="pill">Stakeholder communication</span>
         </div>
-        <p>Nearly everything here was built with other people — a 4-engineer iOS team, a 4-person hackathon team, a 50-intern program I ran the logistics for. And most of it started with a conversation with whoever would actually use it. That's not incidental; it's the method.</p>
       </div>
     </div>
   </div>
@@ -696,27 +728,18 @@
         I'm a senior at the University of Illinois Chicago, finishing a B.S. in Data Science in May 2027.
       </p>
       <p>
-        My job titles have been all over the place — data analyst, data scientist, machine learning
-        intern, program coordinator, outreach lead, iOS engineer. The work underneath them barely
-        changed: find the data, make sense of it, hand someone a decision they can act on.
+        My roles have ranged from data analyst to ML intern to iOS engineer. Analysis rarely arrives
+        with "analyst" in the title, and I've been glad to do it from wherever it sat.
       </p>
       <p>
-        That range is the point. Analysis doesn't only live in jobs with "analyst" in the title, and
-        I've been happy to do it from wherever it needed doing — a research lab, a marketing calendar,
-        a Firebase backend.
-      </p>
-      <p>
-        Almost none of it was solo. I've coordinated 50 interns, shipped an iOS app with four
-        engineers, and won a NASA Space Apps panel with three teammates.
+        The roles that weren't about data matter too. Coordinating 50 interns and running outreach
+        for a cybersecurity competition taught me the part analysis usually fails at: getting someone
+        to act on it.
       </p>
       <p>
         What I keep coming back to is <strong>accessibility</strong> — building for the people the
-        default solution leaves out. Nonverbal autistic individuals. Deaf kids at a doctor's
-        appointment. Blind users reading a room. Outdoor workers in a heat wave.
-      </p>
-      <p>
-        I'd rather ship something imperfect that someone uses than something elegant that sits in a
-        notebook.
+        default solution leaves out. I'd rather ship something imperfect that someone uses than
+        something elegant that sits in a notebook.
       </p>
 
       <div class="edu">
@@ -724,7 +747,7 @@
           <div class="edu__year">May 2027 (expected)</div>
           <h4>B.S. Data Science</h4>
           <p>University of Illinois at Chicago</p>
-          <p class="edu__course">Machine Learning · Probability &amp; Statistics · Linear Programming · Data Science with Python · Databases · R Programming · Discrete Mathematics · Project Management · Finance</p>
+          <p class="edu__course">Machine Learning · Probability &amp; Statistics · Linear Programming · Databases · R Programming · Discrete Mathematics · Project Management</p>
           <p class="edu__course">Women in Computer Science Club — member</p>
         </div>
         <div class="edu__item">
@@ -740,15 +763,15 @@
         <h3 class="panel__title">Recognition</h3>
         <ul class="awards">
           <li>
-            <span class="awards__icon">🏆</span>
+            <svg class="mark" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.6 13.6L7 22l5-2.6 5 2.6-1.6-8.4"/></svg>
             <div><strong>Storytelling Award</strong><span>NASA Space Apps Chicago 2025 — Brickonaut, Team Le'Go</span></div>
           </li>
           <li>
-            <span class="awards__icon">🏆</span>
+            <svg class="mark" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.6 13.6L7 22l5-2.6 5 2.6-1.6-8.4"/></svg>
             <div><strong>Most Impactful App</strong><span>Code Your Dreams Accessibility Ideathon 2023, Google Chicago</span></div>
           </li>
           <li>
-            <span class="awards__icon">🚀</span>
+            <svg class="mark" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.6 13.6L7 22l5-2.6 5 2.6-1.6-8.4"/></svg>
             <div><strong>Shipped to the App Store</strong><span>TrustPath — iOS, 4-person engineering team</span></div>
           </li>
         </ul>
@@ -757,21 +780,21 @@
       <div class="panel">
         <h3 class="panel__title">Currently</h3>
         <ul class="now">
-          <li><span class="now__k">Building</span><span class="now__v">CloudPulse — RAG on Google Cloud</span></li>
+          <li><span class="now__k">Latest</span><span class="now__v">CloudPulse — Google Cloud, Jul 2026</span></li>
           <li><span class="now__k">Studying</span><span class="now__v">Senior year — ML &amp; Linear Programming</span></li>
           <li><span class="now__k">Based in</span><span class="now__v">Chicago, IL</span></li>
-          <li><span class="now__k">Looking for</span><span class="now__v">2027 data science &amp; analytics roles</span></li>
+          <li><span class="now__k">Looking for</span><span class="now__v">2027 data &amp; analytics roles</span></li>
         </ul>
       </div>
 
       <div class="panel">
         <h3 class="panel__title">Built for access</h3>
         <ul class="thread">
-          <li><strong>Stimtelligent</strong><span>Helps caregivers read the stims of nonverbal autistic individuals</span></li>
-          <li><strong>Emo-Cam</strong><span>Narrates facial expressions out loud for blind users</span></li>
+          <li><strong>Stimtelligent</strong><span>Reads the stims of nonverbal autistic individuals</span></li>
+          <li><strong>Emo-Cam</strong><span>Narrates facial expressions for blind users</span></li>
           <li><strong>Doctor-visit communicator</strong><span>Co-designed with deaf kids, for deaf kids</span></li>
-          <li><strong>iHEATRISK</strong><span>Heat-risk plans for people most likely to be hurt by a heat wave</span></li>
-          <li><strong>TrustPath</strong><span>Matches people on parole with community mentors</span></li>
+          <li><strong>iHEATRISK</strong><span>Heat-risk plans for the most vulnerable</span></li>
+          <li><strong>TrustPath</strong><span>Matches people on parole with mentors</span></li>
         </ul>
       </div>
     </aside>
@@ -784,10 +807,8 @@
     <p class="eyebrow">06 — CONTACT</p>
     <h2 class="contact__title">Got data that needs<br>a second opinion?</h2>
     <p class="contact__sub">
-      I'm a senior at UIC graduating in May 2027, looking for data and analytics work in 2027 —
-      internship or new grad. The title matters less to me than the work: analyst, marketing
-      analyst, research, product, operations. If the job involves turning data into a decision,
-      I'd like to hear about it. Email is fastest.
+      Looking for 2027 data and analytics work — internship or new grad. The title matters less to me
+      than the work: analyst, marketing analyst, research, product, operations.
     </p>
     <a href="mailto:zonanoman2022@gmail.com" class="contact__mail">zonanoman2022@gmail.com</a>
     <div class="contact__row">
@@ -805,7 +826,7 @@
   <div class="wrap footer__inner">
     <div class="footer__brand">
       <span class="nav__name">ZONA NOMAN</span>
-      <p>Data scientist, analyst, and builder in Chicago. I work on data under whatever title it comes with, and I build for the people the default leaves out.</p>
+      <p>Data scientist and analyst in Chicago. I work on data under whatever title it comes with, and I build for the people the default leaves out.</p>
     </div>
     <div class="footer__cols">
       <div>
@@ -823,7 +844,7 @@
   </div>
   <div class="wrap footer__base">
     <span>© <span id="year">2026</span> Zona Noman.</span>
-    <a href="#top" class="footer__top">Back to top ↑</a>
+    <a href="#top" class="footer__top">Back to top</a>
   </div>
 </footer>
 

@@ -361,35 +361,66 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 }
 .chips--sm span { font-size: .7rem; padding: 3px 8px; }
 
-/* viz cards */
+/* ---------------------------- screenshots / carousel ---------------------------- */
 .case__visual { position: sticky; top: 110px; }
-.viz-card {
+
+.shots { position: relative; }
+.shots__viewport { overflow: hidden; border-radius: var(--radius); }
+.shots__track { display: flex; transition: transform .5s var(--ease); }
+@media (prefers-reduced-motion: reduce) { .shots__track { transition: none; } }
+
+.shot {
+  position: relative; margin: 0;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-  overflow: hidden; box-shadow: 0 30px 60px -40px rgba(0,0,0,.8);
+  overflow: hidden;
 }
-.viz-card__head {
-  display: flex; justify-content: space-between; align-items: center; gap: 12px;
-  padding: 13px 16px; border-bottom: 1px solid var(--line-soft);
-  font-size: .74rem; color: var(--text-3); font-family: var(--mono); letter-spacing: .02em;
+/* full-width basis applies only to carousel slides, never to card thumbnails */
+.shots__track > .shot { flex: 0 0 100%; }
+/* The placeholder is the DEFAULT state. JS adds .has-img once a real file at
+   data-src actually decodes, which then reveals the image and hides the frame. */
+.shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: none; }
+.shot.has-img img { display: block; }
+
+.shot::before {
+  content: '';
+  display: block; aspect-ratio: 16 / 10;
+  background:
+    repeating-linear-gradient(45deg, var(--line-soft) 0 10px, transparent 10px 20px),
+    var(--surface-2);
 }
-.viz { width: 100%; height: auto; padding: 18px 14px; }
-.viz-axis { stroke: var(--line); stroke-width: 1; }
-.viz-bars rect { fill: url(#none); fill: var(--accent); opacity: .85; transition: height 1.1s var(--ease), y 1.1s var(--ease); }
-.viz-bars rect:nth-child(even) { fill: var(--accent-2); }
-.viz-labels text { fill: var(--text-3); font-size: 8px; font-family: 'JetBrains Mono', monospace; text-anchor: middle; }
+.shot::after {
+  content: 'add ' attr(data-src);
+  position: absolute; top: 0; left: 0; right: 0; display: grid; place-items: center;
+  aspect-ratio: 16 / 10;
+  font-family: var(--mono); font-size: .7rem; color: var(--text-3);
+  text-align: center; padding: 0 18px; word-break: break-all;
+}
+.shot.has-img::before, .shot.has-img::after { display: none; }
+.shot figcaption {
+  padding: 11px 15px; border-top: 1px solid var(--line-soft);
+  font-family: var(--mono); font-size: .71rem; color: var(--text-3);
+}
 
-.risk-rows rect { fill: var(--accent); transition: width 1.1s var(--ease); }
-.risk-rows g:nth-child(3) rect { fill: var(--accent-2); }
-.risk-rows g:nth-child(4) rect,
-.risk-rows g:nth-child(5) rect { fill: var(--accent-3); }
-.risk-label { fill: var(--text-2); font-size: 9px; font-family: 'JetBrains Mono', monospace; }
-.risk-val { fill: var(--text-3); font-size: 9px; font-family: 'JetBrains Mono', monospace; text-anchor: end; }
+.shots__bar { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+.shots__nav {
+  width: 30px; height: 30px; display: grid; place-items: center; flex: none;
+  border: 1px solid var(--line); border-radius: 8px; color: var(--text-2);
+  transition: border-color .25s, color .25s, background .25s;
+}
+.shots__nav:hover { border-color: var(--accent); color: var(--text); background: var(--accent-soft); }
+.shots__dots { display: flex; gap: 6px; margin-right: auto; }
+.shots__dots button {
+  width: 22px; height: 3px; border-radius: 2px; background: var(--line);
+  transition: background .25s;
+}
+.shots__dots button[aria-current="true"] { background: var(--accent); }
 
-.flow rect { fill: var(--surface-2); stroke: var(--line); stroke-width: 1; }
-.flow text { fill: var(--text-2); font-size: 8.5px; font-family: 'JetBrains Mono', monospace; text-anchor: middle; }
-.flow-line { fill: none; stroke: var(--accent); stroke-width: 1.3; stroke-dasharray: 4 4; opacity: .7; animation: dash 2.4s linear infinite; }
-@keyframes dash { to { stroke-dashoffset: -16; } }
-@media (prefers-reduced-motion: reduce) { .flow-line { animation: none; } }
+/* single thumbnail on project cards */
+.shot--thumb { flex: none; border: 0; border-radius: 0; border-bottom: 1px solid var(--line); }
+.shot--thumb img { aspect-ratio: 16 / 9; }
+.shot--thumb::before, .shot--thumb::after { aspect-ratio: 16 / 9; }
+.shot--thumb::after { font-size: .66rem; }
+
 
 /* ---------------------------- timeline ---------------------------- */
 .timeline { position: relative; padding-left: 30px; }
@@ -417,6 +448,11 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 .tl__card ul { display: flex; flex-direction: column; gap: 9px; margin-bottom: 16px; }
 .tl__card ul li { position: relative; padding-left: 20px; font-size: .91rem; color: var(--text-2); line-height: 1.6; }
 .tl__card ul li::before { content: ''; position: absolute; left: 0; top: .6em; width: 7px; height: 1.5px; background: var(--accent-2); }
+.tl__dot--soft { border-color: var(--text-3); }
+.tl__card--soft { background: transparent; }
+.tl__card--soft .tl__org { color: var(--text-2); }
+.tl__card--soft ul li::before { background: var(--text-3); }
+.tl__card--soft:hover { border-color: var(--line); box-shadow: none; }
 
 /* ---------------------------- filters + grid ---------------------------- */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 34px; }
@@ -430,7 +466,8 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 22px; }
 .card {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 26px; position: relative; overflow: hidden;
+  padding: 0; position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
   transition: border-color .3s, transform .35s var(--ease), box-shadow .35s, opacity .3s;
 }
 .card::before {
@@ -442,14 +479,12 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 .card:hover::before { opacity: 1; }
 .card.is-hidden { display: none; }
 
-.card__top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 12px; flex-wrap: wrap; }
+.card__body { flex: 1; padding: 24px 26px 26px; }
+.card__top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 10px; flex-wrap: wrap; }
 .card__year { font-family: var(--mono); font-size: .72rem; color: var(--text-3); }
 .card__role { font-size: .72rem; color: var(--accent-2); font-family: var(--mono); text-align: right; }
-.card__title { font-size: 1.32rem; margin-bottom: 10px; }
-.card__desc { color: var(--text-2); font-size: .92rem; }
-.card__list { display: flex; flex-direction: column; gap: 8px; margin: 0 0 18px; }
-.card__list li { position: relative; padding-left: 18px; font-size: .87rem; color: var(--text-3); line-height: 1.55; }
-.card__list li::before { content: '·'; position: absolute; left: 5px; color: var(--accent); font-weight: 700; }
+.card__title { font-size: 1.28rem; margin-bottom: 10px; }
+.card__desc { color: var(--text-2); font-size: .9rem; margin-bottom: 16px; }
 .card__link { display: inline-block; margin-top: 14px; font-size: .82rem; color: var(--accent); position: relative; z-index: 2; }
 .card__link:hover { text-decoration: underline; }
 
@@ -505,9 +540,9 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 .panel__title { font-size: .78rem; font-family: var(--mono); letter-spacing: .16em; color: var(--text-3); margin-bottom: 20px; text-transform: uppercase; }
 .awards { display: flex; flex-direction: column; gap: 18px; }
 .awards li { display: flex; gap: 13px; align-items: flex-start; }
-.awards__icon { font-size: 1.1rem; line-height: 1.4; }
+.awards .mark { flex: none; margin-top: 3px; color: var(--accent-3); }
 .awards strong { display: block; font-size: .95rem; font-weight: 600; }
-.awards span:not(.awards__icon) { display: block; font-size: .82rem; color: var(--text-3); line-height: 1.5; }
+.awards span { display: block; font-size: .82rem; color: var(--text-3); line-height: 1.5; }
 .thread { display: flex; flex-direction: column; gap: 15px; }
 .thread li { position: relative; padding-left: 17px; }
 .thread li::before {
@@ -629,6 +664,8 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
   .btn { padding: 12px 18px; }
   .contact { padding: 84px 0; }
   .section__head { margin-bottom: 44px; }
+  /* let headings rewrap naturally instead of honouring desktop line breaks */
+  .section__title br, .contact__title br { display: none; }
   .now li { flex-direction: column; gap: 2px; }
   .now__v { text-align: left; }
 }
