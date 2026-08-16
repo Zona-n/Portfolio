@@ -1,15 +1,18 @@
-Project screenshots. All slots are filled.
+Project screenshots.
 
-  cloudpulse-01.jpg  cloudpulse-02.jpg  cloudpulse-03.jpg   live Cloud Run app
-  brickonaut-01.jpg  brickonaut-02.jpg  brickonaut-03.jpg   run locally
-  iheatrisk-01.jpg   iheatrisk-02.jpg                       run locally
-  trustpath.jpg                                             App Store listing
-  stimtelligent.jpg                                         reframed to 16:9
-  farm-to-pantry.jpg                                        contact column redacted
+  cloudpulse-01..03.jpg   live Cloud Run app
+  brickonaut-01..03.jpg   run locally
+  iheatrisk-01..02.jpg    run locally
+  trustpath.jpg           composed from the App Store listing
+  stimtelligent.jpg       composed from stim/ (three phones)
+  farm-to-pantry.jpg      contact column redacted
 
-To swap any of these, replace the file with the same name. Card thumbnails
-look best at 16:9; the frame crops to fit.
+  stim/                   individual Stimtelligent screens, extracted at full
+                          resolution from ECC Stimtelligent.pdf. These are what
+                          the card's lightbox gallery shows, one at a time.
 
-Note on farm-to-pantry.jpg: the source screenshot showed real contact names
-and phone numbers for named organizations. Those two columns are blurred out.
-If you ever re-export it, redact them again before committing.
+Every image on the site opens full size when clicked. To add a gallery to
+another card, put a data-gallery attribute on its <figure class="shot">:
+  data-gallery='[{"src":"assets/shots/x.jpg","cap":"What this shows"}]'
+
+Card thumbnails look best at 16:9; the frame crops to fit.

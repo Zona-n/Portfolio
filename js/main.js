@@ -348,6 +348,101 @@
       .catch(() => renderRepos(FALLBACK));
   }
 
+  /* ---------------------------------------------------- lightbox */
+  // Card thumbnails are small by necessity. Clicking one opens it full size —
+  // for Stimtelligent that means the individual screens rather than the strip.
+  const lb = $('#lightbox');
+  if (lb) {
+    const lbImg = $('#lbImage');
+    const lbCap = $('#lbCaption');
+    const prevBtn = $('[data-lb-prev]', lb);
+    const nextBtn = $('[data-lb-next]', lb);
+    let items = [];
+    let at = 0;
+    let lastFocus = null;
+
+    function galleryFor(fig) {
+      // an explicit gallery wins
+      const raw = fig.dataset.gallery;
+      if (raw) {
+        try { return { list: JSON.parse(raw), start: 0 }; } catch (e) { /* fall through */ }
+      }
+      // a carousel slide opens its whole set, starting where you clicked
+      const track = fig.closest('.shots__track');
+      if (track) {
+        const slides = $$('.shot', track);
+        return {
+          list: slides.map((sl) => ({
+            src: sl.querySelector('img').getAttribute('src'),
+            cap: (sl.querySelector('figcaption') || {}).textContent || '',
+          })),
+          start: slides.indexOf(fig),
+        };
+      }
+      const img = fig.querySelector('img');
+      return { list: [{ src: img.getAttribute('src'), cap: img.getAttribute('alt') || '' }], start: 0 };
+    }
+
+    function render() {
+      const it = items[at];
+      lbImg.src = it.src;
+      lbImg.alt = it.cap || '';
+      lbCap.textContent = items.length > 1
+        ? `${it.cap}  ·  ${at + 1} / ${items.length}`
+        : it.cap;
+      const many = items.length > 1;
+      prevBtn.hidden = !many;
+      nextBtn.hidden = !many;
+    }
+
+    function open(fig) {
+      const g = galleryFor(fig);
+      items = g.list;
+      at = g.start;
+      lastFocus = document.activeElement;
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+      render();
+      $('[data-lb-close]', lb).focus();
+    }
+
+    function close() {
+      lb.hidden = true;
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+
+    const step = (d) => { at = (at + d + items.length) % items.length; render(); };
+
+    $$('.shot').forEach((fig) => {
+      // a small zoom affordance, so it reads as clickable
+      const hint = document.createElement('span');
+      hint.className = 'shot__zoom';
+      hint.setAttribute('aria-hidden', 'true');
+      hint.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6M11 8.4v5.2M8.4 11h5.2"/></svg>';
+      fig.appendChild(hint);
+
+      fig.tabIndex = 0;
+      fig.setAttribute('role', 'button');
+      fig.setAttribute('aria-label', 'Open image full size');
+      fig.addEventListener('click', () => open(fig));
+      fig.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(fig); }
+      });
+    });
+
+    $$('[data-lb-close]', lb).forEach((el) => el.addEventListener('click', close));
+    prevBtn.addEventListener('click', () => step(-1));
+    nextBtn.addEventListener('click', () => step(1));
+
+    document.addEventListener('keydown', (e) => {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') { e.preventDefault(); close(); }
+      else if (e.key === 'ArrowLeft' && items.length > 1) { e.preventDefault(); step(-1); }
+      else if (e.key === 'ArrowRight' && items.length > 1) { e.preventDefault(); step(1); }
+    });
+  }
+
   /* ---------------------------------------------------- command palette */
   const palette = $('#palette');
   const paletteInput = $('#paletteInput');
