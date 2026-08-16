@@ -534,9 +534,6 @@
       </article>
 
       <article class="card reveal" data-cat="ml a11y">
-        <figure class="shot shot--thumb" data-src="assets/shots/emocam.png">
-          <img src="assets/shots/emocam.png" alt="Emo-Cam prototype" loading="lazy" />
-        </figure>
         <div class="card__body">
           <div class="card__top">
             <span class="card__year">Apr 2025</span>
@@ -553,9 +550,6 @@
       </article>
 
       <article class="card reveal" data-cat="a11y app">
-        <figure class="shot shot--thumb" data-src="assets/shots/doctor-visit.png">
-          <img src="assets/shots/doctor-visit.png" alt="Doctor-visit communicator app" loading="lazy" />
-        </figure>
         <div class="card__body">
           <div class="card__top">
             <span class="card__year">Apr 2023</span>
@@ -571,9 +565,6 @@
       </article>
 
       <article class="card reveal" data-cat="ml data">
-        <figure class="shot shot--thumb" data-src="assets/shots/career-rec.png">
-          <img src="assets/shots/career-rec.png" alt="Career recommendation system" loading="lazy" />
-        </figure>
         <div class="card__body">
           <div class="card__top">
             <span class="card__year">Jan — May 2025</span>
@@ -609,8 +600,19 @@
       </article>
 
       <article class="card reveal" data-cat="data">
-        <figure class="shot shot--thumb" data-src="assets/shots/chicago-crime.png">
-          <img src="assets/shots/chicago-crime.png" alt="Chicago crime and census analysis" loading="lazy" />
+        <figure class="chart-thumb">
+          <svg viewBox="0 0 320 180" role="img"
+               aria-label="Reported crimes in Chicago fell from about 486,000 in 2001 to about 240,000 in 2022">
+            <polygon class="chart-area" points="10,148 10.0,22.4 24.3,22.0 38.6,26.9 52.9,29.9 67.1,37.0 81.4,39.6 95.7,44.6 110.0,49.1 124.3,64.7 138.6,74.9 152.9,83.3 167.1,90.4 181.4,103.5 195.7,117.9 210.0,122.9 224.3,120.6 238.6,120.9 252.9,121.0 267.1,124.4 281.4,146.6 295.7,148.0 310.0,134.2 310,148"/>
+            <polyline class="chart-line" points="10.0,22.4 24.3,22.0 38.6,26.9 52.9,29.9 67.1,37.0 81.4,39.6 95.7,44.6 110.0,49.1 124.3,64.7 138.6,74.9 152.9,83.3 167.1,90.4 181.4,103.5 195.7,117.9 210.0,122.9 224.3,120.6 238.6,120.9 252.9,121.0 267.1,124.4 281.4,146.6 295.7,148.0 310.0,134.2"/>
+            <circle class="chart-dot" cx="10" cy="22.4" r="3"/>
+            <circle class="chart-dot" cx="310" cy="134.2" r="3"/>
+            <text class="chart-tick" x="10" y="166">2001</text>
+            <text class="chart-tick chart-tick--end" x="310" y="166">2022</text>
+            <text class="chart-val" x="18" y="18">486k</text>
+            <text class="chart-val chart-tick--end" x="302" y="130">240k</text>
+          </svg>
+          <figcaption>Reported crimes in Chicago, 2001&ndash;2022 &middot; Chicago Data Portal</figcaption>
         </figure>
         <div class="card__body">
           <div class="card__top">
@@ -626,26 +628,7 @@
         </div>
       </article>
 
-      <article class="card reveal" data-cat="app">
-        <figure class="shot shot--thumb" data-src="assets/shots/flag-quiz.png">
-          <img src="assets/shots/flag-quiz.png" alt="World Flag Quiz" loading="lazy" />
-        </figure>
-        <div class="card__body">
-          <div class="card__top">
-            <span class="card__year">Aug 2025</span>
-            <span class="card__role">Side project</span>
           </div>
-          <h3 class="card__title">World Flag Quiz</h3>
-          <p class="card__desc">
-            A browser game on 20 random world flags, entirely client-side. Live data from the REST
-            Countries API with a full offline fallback.
-          </p>
-          <div class="chips chips--sm"><span>JavaScript</span><span>CSS Grid</span><span>REST API</span></div>
-          <a class="card__link" href="https://github.com/Zona-n/world-flag-quiz" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </article>
-
-    </div>
 
     <!-- LIVE GITHUB -->
     <div class="gh reveal">

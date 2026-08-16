@@ -436,6 +436,25 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 .shot--thumb img { aspect-ratio: 16 / 9; }
 .shot--thumb::after { font-size: .66rem; }
 
+/* inline chart used in place of a screenshot where the work is the data */
+.chart-thumb {
+  margin: 0; border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+}
+.chart-thumb svg { width: 100%; height: auto; display: block; padding: 4px 0 0; }
+.chart-area { fill: var(--accent); opacity: .13; }
+.chart-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart-dot { fill: var(--accent-2); }
+.chart-tick, .chart-val {
+  fill: var(--text-3); font-size: 9px; font-family: var(--mono);
+}
+.chart-val { fill: var(--text-2); }
+.chart-tick--end { text-anchor: end; }
+.chart-thumb figcaption {
+  padding: 9px 15px; border-top: 1px solid var(--line-soft);
+  font-family: var(--mono); font-size: .64rem; color: var(--text-3); line-height: 1.4;
+}
+
 
 /* ---------------------------- timeline ---------------------------- */
 .timeline { position: relative; padding-left: 30px; }
