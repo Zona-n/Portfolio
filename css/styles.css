@@ -392,27 +392,27 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 }
 /* full-width basis applies only to carousel slides, never to card thumbnails */
 .shots__track > .shot { flex: 0 0 100%; }
-/* The placeholder is the DEFAULT state. JS adds .has-img once a real file at
-   data-src actually decodes, which then reveals the image and hides the frame. */
-.shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: none; }
-.shot.has-img img { display: block; }
+/* The image always occupies layout (a display:none lazy image is never
+   fetched, so it could never report success). The placeholder is painted on
+   top of it and removed once JS confirms the file actually decoded. */
+.shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
 
 .shot::before {
   content: '';
-  display: block; aspect-ratio: 16 / 10;
+  position: absolute; inset: 0;
   background:
     repeating-linear-gradient(45deg, var(--line-soft) 0 10px, transparent 10px 20px),
     var(--surface-2);
 }
 .shot::after {
   content: 'add ' attr(data-src);
-  position: absolute; top: 0; left: 0; right: 0; display: grid; place-items: center;
-  aspect-ratio: 16 / 10;
+  position: absolute; inset: 0; display: grid; place-items: center;
   font-family: var(--mono); font-size: .7rem; color: var(--text-3);
   text-align: center; padding: 0 18px; word-break: break-all;
 }
 .shot.has-img::before, .shot.has-img::after { display: none; }
 .shot figcaption {
+  position: relative; z-index: 1;
   padding: 11px 15px; border-top: 1px solid var(--line-soft);
   font-family: var(--mono); font-size: .71rem; color: var(--text-3);
 }
@@ -434,7 +434,6 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 /* single thumbnail on project cards */
 .shot--thumb { flex: none; border: 0; border-radius: 0; border-bottom: 1px solid var(--line); }
 .shot--thumb img { aspect-ratio: 16 / 9; }
-.shot--thumb::before, .shot--thumb::after { aspect-ratio: 16 / 9; }
 .shot--thumb::after { font-size: .66rem; }
 
 
