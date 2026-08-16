@@ -89,12 +89,21 @@
         someone who doesn't write code.
       </p>
 
-      <div class="terminal reveal" aria-hidden="true">
-        <div class="terminal__bar"><i></i><i></i><i></i></div>
-        <code class="terminal__line">
-          <span class="terminal__prompt">zona@uic</span><span class="terminal__sep">:~$</span>
-          <span id="typeTarget"></span><span class="caret"></span>
-        </code>
+      <div class="ask reveal" id="ask">
+        <p class="ask__label">Ask me about</p>
+        <div class="ask__chips" role="tablist" aria-label="Topics Zona likes talking about">
+          <button class="ask__chip is-active" role="tab" aria-selected="true"
+                  data-answer="No one had labelled heat-risk data, so I invented 500 people for the model to learn from.">synthetic data</button>
+          <button class="ask__chip" role="tab" aria-selected="false"
+                  data-answer="Twenty-one years of it. 2001 was the peak, and Downtown shootings jumped 64% in 2022.">Chicago crime data</button>
+          <button class="ask__chip" role="tab" aria-selected="false"
+                  data-answer="The most useful design feedback I have ever gotten came from a room of deaf kids.">designing for access</button>
+          <button class="ask__chip" role="tab" aria-selected="false"
+                  data-answer="I am always the one who volunteers to present. It won us our panel at NASA Space Apps.">demo day nerves</button>
+          <button class="ask__chip" role="tab" aria-selected="false"
+                  data-answer="Google Cloud ships faster than anyone can read, so we indexed 49,446 release notes and let people ask.">reading 49,446 release notes</button>
+        </div>
+        <p class="ask__answer" id="askAnswer" aria-live="polite"></p>
       </div>
 
       <div class="hero__cta reveal">

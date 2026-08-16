@@ -157,30 +157,53 @@
     go(0);
   });
 
-  /* ---------------------------------------------------- typing line */
-  const typeTarget = $('#typeTarget');
-  const phrases = [
-    'python train.py --model random_forest',
-    'SELECT insight FROM messy_data;',
-    'git commit -m "the model finally converged"',
-    'df.groupby("district").agg(access="mean")',
-    'flask run  # ship it',
-  ];
-  if (typeTarget) {
-    if (reduceMotion) {
-      typeTarget.textContent = phrases[0];
-    } else {
-      let pi = 0, ci = 0, deleting = false;
-      (function tick() {
-        const phrase = phrases[pi];
-        ci += deleting ? -1 : 1;
-        typeTarget.textContent = phrase.slice(0, ci);
-        let delay = deleting ? 26 : 55;
-        if (!deleting && ci === phrase.length) { delay = 1900; deleting = true; }
-        else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 320; }
-        setTimeout(tick, delay);
-      })();
+  /* ---------------------------------------------------- ask me about */
+  const askRoot = $('#ask');
+  if (askRoot) {
+    const chips = $$('.ask__chip', askRoot);
+    const answer = $('#askAnswer');
+    let current = 0;
+    let timer = null;
+    let userDriving = false;
+
+    function show(i, animate = true) {
+      current = (i + chips.length) % chips.length;
+      chips.forEach((c, n) => {
+        const on = n === current;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-selected', String(on));
+      });
+      const text = chips[current].dataset.answer;
+      if (!animate || reduceMotion) { answer.textContent = text; return; }
+      answer.classList.add('is-swapping');
+      setTimeout(() => {
+        answer.textContent = text;
+        answer.classList.remove('is-swapping');
+      }, 260);
     }
+
+    function stopAuto() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+    function startAuto() {
+      if (reduceMotion || timer || userDriving) return;
+      timer = setInterval(() => show(current + 1), 5200);
+    }
+
+    chips.forEach((chip, i) => {
+      // Once someone picks a topic they are driving, so stop cycling for good.
+      const take = () => { userDriving = true; stopAuto(); show(i); };
+      chip.addEventListener('click', take);
+      chip.addEventListener('focus', take);
+      chip.addEventListener('mouseenter', () => { if (!userDriving) show(i); });
+    });
+
+    // Pause while the pointer is over the block, resume on the way out.
+    askRoot.addEventListener('mouseenter', stopAuto);
+    askRoot.addEventListener('mouseleave', startAuto);
+
+    show(0, false);
+    startAuto();
   }
 
   /* ---------------------------------------------------- hero canvas */
