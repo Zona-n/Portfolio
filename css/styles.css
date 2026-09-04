@@ -586,6 +586,18 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 .thread strong { display: block; font-size: .9rem; font-weight: 600; }
 .thread span { display: block; font-size: .81rem; color: var(--text-3); line-height: 1.5; }
 
+.certs { display: flex; flex-direction: column; gap: 16px; }
+.certs li { display: flex; align-items: flex-start; gap: 14px; }
+.certs__body { flex: 1; min-width: 0; }
+.certs__body strong { display: block; font-size: .92rem; font-weight: 600; }
+.certs__body span { display: block; font-size: .78rem; color: var(--text-3); font-family: var(--mono); margin-top: 3px; }
+.certs__verify {
+  flex: none; margin-top: 2px; font-size: .72rem; font-family: var(--mono);
+  color: var(--accent); border: 1px solid var(--line); border-radius: 20px;
+  padding: 4px 11px; transition: border-color .25s, background .25s, color .25s;
+}
+.certs__verify:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--text); }
+
 .now { display: flex; flex-direction: column; gap: 13px; }
 .now li { display: flex; justify-content: space-between; gap: 14px; font-size: .86rem; align-items: baseline; }
 .now__k { color: var(--text-3); font-family: var(--mono); font-size: .74rem; white-space: nowrap; }
