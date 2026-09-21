@@ -1,5 +1,6 @@
 Project screenshots.
 
+  tempo-01..03.jpg        figures from the analysis notebook
   cloudpulse-01..03.jpg   live Cloud Run app
   brickonaut-01..03.jpg   run locally
   iheatrisk-01..02.jpg    run locally

@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Zona Noman — Data Scientist &amp; Analyst</title>
-<meta name="description" content="Zona Noman is a senior studying data science at UIC. Four data internships including Google Cloud, plus coordination and outreach roles, with a focus on accessible products built for the people the default leaves out." />
+<meta name="description" content="Zona Noman is a senior studying data science at UIC. Four data internships including Google Cloud, an independent NASA TEMPO satellite analysis, plus coordination and outreach roles, with a focus on accessible products built for the people the default leaves out." />
 <meta name="author" content="Zona Noman" />
 <meta name="theme-color" content="#0A0A0C" />
 
@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=5" />
+<link rel="stylesheet" href="css/styles.css?v=6" />
 <noscript><style>.reveal{opacity:1!important;transform:none!important}.hero__canvas,.scroll-cue{display:none}</style></noscript>
 </head>
 <body>
@@ -102,6 +102,8 @@
                   data-answer="I am always the one who volunteers to present. It won us our panel at NASA Space Apps.">demo day nerves</button>
           <button class="ask__chip" role="tab" aria-selected="false"
                   data-answer="Google Cloud ships faster than anyone can read, so we indexed 49,446 release notes and let people ask.">reading 49,446 release notes</button>
+          <button class="ask__chip" role="tab" aria-selected="false"
+                  data-answer="Dropping the satellite data made my ozone model better. That was the finding, and I published it anyway.">a null result</button>
         </div>
         <p class="ask__answer" id="askAnswer" aria-live="polite"></p>
       </div>
@@ -166,15 +168,80 @@
   <div class="wrap">
     <div class="section__head reveal">
       <p class="eyebrow">01 — SELECTED WORK</p>
-      <h2 class="section__title">Three things I built that I'd <br>happily be quizzed on.</h2>
+      <h2 class="section__title">Four things I built that I'd <br>happily be quizzed on.</h2>
     </div>
 
     <div class="cases">
 
-      <!-- CASE 1 — CloudPulse -->
+      <!-- CASE 1 — TEMPO -->
       <article class="case reveal">
         <div class="case__meta">
           <span class="case__index">01</span>
+          <div class="case__tags">
+            <span class="tag">Personal project</span>
+            <span class="tag">Sep 2026</span>
+            <span class="tag tag--award">Null result, reported anyway</span>
+          </div>
+        </div>
+        <div class="case__body">
+          <div class="case__text">
+            <h3 class="case__title">TEMPO Surface Ozone</h3>
+            <p class="case__kicker">Does NASA's newest satellite know what ozone you're actually breathing? I tested it over Los Angeles.</p>
+            <p>
+              TEMPO measures total column ozone from geostationary orbit. EPA monitors measure the
+              surface ozone people inhale. Most of the column is stratospheric and never reaches the
+              ground, so I matched 380 TEMPO granules to four LA monitors and reanalysis weather to
+              find out how much signal the satellite really adds.
+            </p>
+            <ul class="case__points">
+              <li><strong>Essentially none.</strong> Dropping TEMPO's features <em>improved</em> test R&sup2; from 0.734 to 0.753. Two-metre temperature carried almost all of it.</li>
+              <li>Time-based split with the final week held out, no shuffling, so the autocorrelated series couldn't leak. Four models plus an ablation to isolate the satellite's contribution.</li>
+              <li>The model under-predicts high-ozone afternoons, the tail regulators care about, and the coastal-to-inland gradient roughly doubles peak concentrations.</li>
+            </ul>
+            <div class="chips">
+              <span>Python</span><span>scikit-learn</span><span>PyTorch</span><span>xarray</span><span>NASA Earthdata</span><span>EPA AQS</span>
+            </div>
+            <div class="case__links">
+              <a href="https://github.com/Zona-n/tempo-surface-ozone-prediction" target="_blank" rel="noopener" class="link-arrow">View the notebook</a>
+            </div>
+          </div>
+
+          <div class="case__visual">
+            <div class="shots" data-shots>
+              <div class="shots__viewport">
+                <div class="shots__track">
+                  <figure class="shot" data-src="assets/shots/tempo-01.jpg">
+                    <img src="assets/shots/tempo-01.jpg" data-eager alt="Scatter plots: satellite column ozone vs surface ozone (r = 0.19) beside temperature vs surface ozone (r = 0.90)" />
+                    <figcaption>Satellite column (r = 0.19) vs temperature (r = 0.90) against surface ozone</figcaption>
+                  </figure>
+                  <figure class="shot" data-src="assets/shots/tempo-02.jpg">
+                    <img src="assets/shots/tempo-02.jpg" alt="Random forest feature importance chart with temperature dominating" loading="lazy" />
+                    <figcaption>Feature importance: temperature dominates, the satellite barely registers</figcaption>
+                  </figure>
+                  <figure class="shot" data-src="assets/shots/tempo-03.jpg">
+                    <img src="assets/shots/tempo-03.jpg" alt="Diurnal ozone cycle at four monitors from coast to inland" loading="lazy" />
+                    <figcaption>Diurnal cycle at four monitors, coast to inland valley</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="shots__bar">
+                <button class="shots__nav" data-shots-prev aria-label="Previous image">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+                </button>
+                <div class="shots__dots" data-shots-dots></div>
+                <button class="shots__nav" data-shots-next aria-label="Next image">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 2 — CloudPulse -->
+      <article class="case case--flip reveal">
+        <div class="case__meta">
+          <span class="case__index">02</span>
           <div class="case__tags">
             <span class="tag">Google Cloud</span>
             <span class="tag">Chicago Sprinternship 2026</span>
@@ -235,10 +302,10 @@
         </div>
       </article>
 
-      <!-- CASE 2 — Brickonaut -->
-      <article class="case case--flip reveal">
+      <!-- CASE 3 — Brickonaut -->
+      <article class="case reveal">
         <div class="case__meta">
-          <span class="case__index">02</span>
+          <span class="case__index">03</span>
           <div class="case__tags">
             <span class="tag tag--award">Storytelling Award</span>
             <span class="tag">NASA Space Apps 2025</span>
@@ -298,10 +365,10 @@
         </div>
       </article>
 
-      <!-- CASE 3 — iHEATRISK -->
-      <article class="case reveal">
+      <!-- CASE 4 — iHEATRISK -->
+      <article class="case case--flip reveal">
         <div class="case__meta">
-          <span class="case__index">03</span>
+          <span class="case__index">04</span>
           <div class="case__tags">
             <span class="tag">Discovery Partners Institute</span>
             <span class="tag">Summer 2025</span>
@@ -667,8 +734,8 @@
         <h3><span class="skillgroup__num">02</span> Modeling &amp; ML</h3>
         <div class="skillgroup__items">
           <span class="pill pill--strong">Random Forests</span><span class="pill pill--strong">Regression</span>
-          <span class="pill">Forecasting</span><span class="pill">Optimization</span>
-          <span class="pill">Computer vision</span><span class="pill">RAG</span>
+          <span class="pill">PyTorch</span><span class="pill">Forecasting</span>
+          <span class="pill">Ablation studies</span><span class="pill">Computer vision</span><span class="pill">RAG</span>
         </div>
       </div>
 
@@ -676,7 +743,8 @@
         <h3><span class="skillgroup__num">03</span> Data &amp; Cloud</h3>
         <div class="skillgroup__items">
           <span class="pill pill--strong">BigQuery</span><span class="pill pill--strong">Vertex AI</span>
-          <span class="pill">Google Cloud</span><span class="pill">Azure OpenAI</span>
+          <span class="pill">Google Cloud</span><span class="pill">NASA Earthdata</span>
+          <span class="pill">xarray / NetCDF</span><span class="pill">Azure OpenAI</span>
           <span class="pill">Firebase</span><span class="pill">Flask APIs</span>
         </div>
       </div>
@@ -803,7 +871,7 @@
       <div class="panel">
         <h3 class="panel__title">Currently</h3>
         <ul class="now">
-          <li><span class="now__k">Latest</span><span class="now__v">CloudPulse — Google Cloud, Jul 2026</span></li>
+          <li><span class="now__k">Latest</span><span class="now__v">TEMPO ozone analysis — Sep 2026</span></li>
           <li><span class="now__k">Studying</span><span class="now__v">Senior year — ML &amp; Linear Programming</span></li>
           <li><span class="now__k">Based in</span><span class="now__v">Chicago, IL</span></li>
           <li><span class="now__k">Looking for</span><span class="now__v">2027 data &amp; analytics roles</span></li>
@@ -904,6 +972,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=5"></script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>

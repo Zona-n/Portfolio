@@ -460,6 +460,7 @@
     { label: 'Email zonanoman2022@gmail.com', kind: 'link', action: () => { window.location.href = 'mailto:zonanoman2022@gmail.com'; } },
     { label: 'GitHub — @Zona-n', kind: 'link', action: () => window.open('https://github.com/Zona-n', '_blank') },
     { label: 'LinkedIn', kind: 'link', action: () => window.open('https://www.linkedin.com/in/zona-noman-a05479243', '_blank') },
+    { label: 'TEMPO Surface Ozone — NASA satellite analysis', kind: 'project', action: () => window.open('https://github.com/Zona-n/tempo-surface-ozone-prediction', '_blank') },
     { label: 'CloudPulse — Google Cloud, Vertex AI RAG', kind: 'project', action: () => window.open('https://github.com/Chicago-Sprinterns-2026/CloudPulse', '_blank') },
     { label: 'Brickonaut — NASA Space Apps', kind: 'project', action: () => window.open('https://github.com/Zona-n/NASA-SPACE-APPS', '_blank') },
     { label: 'iHEATRISK — heat risk model', kind: 'project', action: () => window.open('https://github.com/Zona-n/heatrisk_intervention_library', '_blank') },
