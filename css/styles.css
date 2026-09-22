@@ -488,6 +488,24 @@ html[data-theme="light"] .hero__glow { opacity: .14; }
 .tl__card--soft ul li::before { background: var(--text-3); }
 .tl__card--soft:hover { border-color: var(--line); box-shadow: none; }
 
+/* ---------------------------- leadership ---------------------------- */
+.leadership { margin-top: 64px; padding-top: 44px; border-top: 1px solid var(--line); }
+.leadership__head { max-width: 640px; margin-bottom: 26px; }
+.leadership__head .eyebrow { margin-bottom: 10px; }
+.leadership__head h3 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); letter-spacing: -.02em; }
+.leadership__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.lead-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 22px 24px; transition: border-color .3s, transform .3s var(--ease);
+}
+.lead-card:hover { border-color: color-mix(in srgb, var(--accent) 40%, transparent); transform: translateY(-3px); }
+.lead-card__when { font-family: var(--mono); font-size: .72rem; color: var(--text-3); letter-spacing: .04em; margin-bottom: 8px; }
+.lead-card h4 { font-size: 1.05rem; }
+.lead-card__place { font-size: .8rem; color: var(--text-3); margin: 4px 0 12px; }
+.lead-card ul { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.lead-card ul li { position: relative; padding-left: 18px; font-size: .88rem; color: var(--text-2); line-height: 1.55; }
+.lead-card ul li::before { content: ''; position: absolute; left: 0; top: .6em; width: 7px; height: 1.5px; background: var(--accent-2); }
+
 /* ---------------------------- filters + grid ---------------------------- */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 34px; }
 .filter {

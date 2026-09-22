@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=6" />
+<link rel="stylesheet" href="css/styles.css?v=7" />
 <noscript><style>.reveal{opacity:1!important;transform:none!important}.hero__canvas,.scroll-cue{display:none}</style></noscript>
 </head>
 <body>
@@ -433,10 +433,10 @@
   <div class="wrap">
     <div class="section__head reveal">
       <p class="eyebrow">02 — EXPERIENCE</p>
-      <h2 class="section__title">Half of these were data roles. <br>The rest taught me to explain them.</h2>
+      <h2 class="section__title">Four data internships. <br>One summer running the program around them.</h2>
       <p class="section__sub">
-        Analyst, data scientist, ML intern, cloud intern — then program coordinator and outreach
-        lead, where the work was people rather than pipelines.
+        Data analyst, data scientist, ML intern, data engineering intern — and a concurrent stint
+        coordinating the 50 interns around me at DPI.
       </p>
     </div>
 
@@ -447,14 +447,15 @@
         <div class="tl__when">Jul 13 — Jul 31, 2026</div>
         <div class="tl__card">
           <div class="tl__top">
-            <h3>Google Cloud Intern <span class="tl__org">· Chicago Sprinternship 2026</span></h3>
-            <span class="tl__place">Google office · Chicago, IL · Team of 10</span>
+            <h3>Data Engineering Intern <span class="tl__org">· Google Cloud</span></h3>
+            <span class="tl__place">Chicago Sprinternship · Google office, Chicago · Team of 10</span>
           </div>
           <ul>
-            <li>Built the data layer for CloudPulse, a grounded AI assistant for Google Cloud product changes: a BigQuery pipeline over 49,446 release notes spanning 296 products and 16 years.</li>
-            <li>Implemented Vertex AI RAG grounding and a Vertex AI Search data store, unified behind one tool layer with keyword fallback.</li>
+            <li>Replaced stale build-time data with a live, cursor-paginated BigQuery feed covering 49,446 release notes across 296 products (2010–2026), served by FastAPI on Cloud Run.</li>
+            <li>Cut page load from 5+ sequential API calls to one by profiling a 20× volume imbalance across products and loading a preview on demand instead of a 9,800-record history.</li>
+            <li>Deduplicated 9.6% of 49,000+ records from a source table with no primary key, and raised documentation-link accuracy from 95.3% to 100% across 129 URLs.</li>
           </ul>
-          <div class="chips chips--sm"><span>BigQuery</span><span>Vertex AI</span><span>Gemini</span><span>Python</span></div>
+          <div class="chips chips--sm"><span>BigQuery</span><span>FastAPI</span><span>Cloud Run</span><span>Vertex AI</span><span>Python</span></div>
         </div>
       </li>
 
@@ -508,22 +509,6 @@
       </li>
 
       <li class="tl reveal">
-        <div class="tl__dot tl__dot--soft" aria-hidden="true"></div>
-        <div class="tl__when">Aug 2025 — Apr 2026</div>
-        <div class="tl__card tl__card--soft">
-          <div class="tl__top">
-            <h3>Outreach Member <span class="tl__org">· Capture the Flame</span></h3>
-            <span class="tl__place">Marketing and partnerships · Chicago's largest cybersecurity competition</span>
-          </div>
-          <ul>
-            <li>Drove university outreach and built company partnerships to grow participation.</li>
-            <li>Ran social media end to end — ideation, filming, editing, publishing — and tracked engagement in Excel to reallocate effort.</li>
-          </ul>
-          <div class="chips chips--sm"><span>Outreach</span><span>Social strategy</span><span>Partnerships</span></div>
-        </div>
-      </li>
-
-      <li class="tl reveal">
         <div class="tl__dot" aria-hidden="true"></div>
         <div class="tl__when">May — Jul 2022</div>
         <div class="tl__card">
@@ -540,6 +525,34 @@
       </li>
 
     </ol>
+
+    <div class="leadership reveal">
+      <div class="leadership__head">
+        <p class="eyebrow">LEADERSHIP</p>
+        <h3>Unpaid, and where I learned to get a room to act.</h3>
+      </div>
+      <div class="leadership__grid">
+        <article class="lead-card">
+          <div class="lead-card__when">Aug 2025 — Apr 2026</div>
+          <h4>Outreach Lead <span class="tl__org">· Capture the Flame</span></h4>
+          <p class="lead-card__place">Chicago's largest cybersecurity competition</p>
+          <ul>
+            <li>Drove university outreach and built company partnerships to grow participation.</li>
+            <li>Ran social media end to end — ideation, filming, editing, publishing — and tracked engagement in Excel to reallocate effort.</li>
+          </ul>
+          <div class="chips chips--sm"><span>Outreach</span><span>Social strategy</span><span>Partnerships</span></div>
+        </article>
+        <article class="lead-card">
+          <div class="lead-card__when">Current</div>
+          <h4>Communications Committee <span class="tl__org">· Women in Cybersecurity</span></h4>
+          <p class="lead-card__place">WiCyS · University of Illinois Chicago</p>
+          <ul>
+            <li>Part of the committee that runs the chapter's communications — announcements, event promotion, and member outreach.</li>
+          </ul>
+          <div class="chips chips--sm"><span>Communications</span><span>Community</span></div>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -547,8 +560,12 @@
 <section class="section" id="projects">
   <div class="wrap">
     <div class="section__head reveal">
-      <p class="eyebrow">03 — PROJECTS &amp; BUILDS</p>
-      <h2 class="section__title">Hackathons, side projects, <br>and things I couldn't stop thinking about.</h2>
+      <p class="eyebrow">03 — ALL PROJECTS</p>
+      <h2 class="section__title">The full list.</h2>
+      <p class="section__sub">
+        Everything built on my own time — hackathons, side projects, and two from the highlights
+        above. Internship work lives under Experience.
+      </p>
     </div>
 
     <div class="filters reveal" role="tablist" aria-label="Filter projects">
@@ -560,6 +577,46 @@
     </div>
 
     <div class="grid" id="projectGrid">
+
+      <article class="card reveal" data-cat="data ml">
+        <figure class="shot shot--thumb" data-src="assets/shots/tempo-01.jpg">
+          <img src="assets/shots/tempo-01.jpg" alt="Satellite column vs surface ozone beside temperature vs surface ozone" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">Sep 2026</span>
+            <span class="card__role">Personal project</span>
+          </div>
+          <h3 class="card__title">TEMPO Surface Ozone</h3>
+          <p class="card__desc">
+            Tested whether NASA's TEMPO satellite improves surface-ozone prediction over Los Angeles.
+            It doesn't — removing it raised test R&sup2; from 0.734 to 0.753. Four models, a
+            time-based split, an ablation, and the null result reported as-is.
+          </p>
+          <div class="chips chips--sm"><span>Python</span><span>scikit-learn</span><span>PyTorch</span><span>xarray</span></div>
+          <a class="card__link" href="https://github.com/Zona-n/tempo-surface-ozone-prediction" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="ml data app">
+        <figure class="shot shot--thumb" data-src="assets/shots/brickonaut-01.jpg">
+          <img src="assets/shots/brickonaut-01.jpg" alt="Brickonaut landing page with three persona dashboards" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <div class="card__top">
+            <span class="card__year">Oct 2025</span>
+            <span class="card__role">Storytelling Award · NASA Space Apps</span>
+          </div>
+          <h3 class="card__title">Brickonaut</h3>
+          <p class="card__desc">
+            A semantic research dashboard over 600+ NASA bioscience publications, with persona views
+            for scientists, managers, and mission architects. I built the ingestion and
+            summarization backend and led the winning demo.
+          </p>
+          <div class="chips chips--sm"><span>Python</span><span>Flask</span><span>Azure OpenAI</span><span>D3.js</span></div>
+          <a class="card__link" href="https://github.com/Zona-n/NASA-SPACE-APPS" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
 
       <article class="card reveal" data-cat="app ml">
         <figure class="shot shot--thumb" data-src="assets/shots/trustpath.jpg">
@@ -972,6 +1029,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=6"></script>
+<script src="js/main.js?v=7"></script>
 </body>
 </html>
